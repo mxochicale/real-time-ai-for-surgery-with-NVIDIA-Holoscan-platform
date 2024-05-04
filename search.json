@@ -12,5 +12,12 @@
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Template for tabsets",
     "text": "Template for tabsets\n\nTab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B"
+  },
+  {
+    "objectID": "index.html#multiple-columns",
+    "href": "index.html#multiple-columns",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "Multiple columns",
+    "text": "Multiple columns\n\n\nLeft column\n\nRight column"
   }
 ]

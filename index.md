@@ -54,3 +54,21 @@ Content for `Tab A`
 Content for `Tab B`
 
 </div>
+
+## Multiple columns
+
+<div class="columns">
+
+<div class="column" width="40%">
+
+Left column
+
+</div>
+
+<div class="column" width="60%">
+
+Right column
+
+</div>
+
+</div>
