@@ -35,8 +35,7 @@ format:
 [2024-04-20 @ [Link for grid-worms-animation 2023](https://github.com/saforem2/grid-worms-animation/)]{.dim-text style="text-align:left;'}
 :::
 
-
-# Overview
+# Overview {.smaller}
 1. [overview](#sec-ov)
 2. [holoscan-platform](#sec-hp)
 3. [end-to-end-apps](#sec-e2e)
@@ -62,4 +61,16 @@ Content for `Tab B`
 
 :::
 
+## Multiple columns
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
 
