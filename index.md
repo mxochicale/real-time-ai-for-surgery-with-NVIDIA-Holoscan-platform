@@ -12,7 +12,7 @@ NVIDIA-Holoscan platform</span>
 <span style="color:#777777; font-size:1.2em; font-weight: bold;"></span>  
 <span style="padding-bottom: 0.5rem;"><br> </span>  
 [](http://mxochicale.github.io/) Miguel Xochicale, PhD  
-\[<span style="border-bottom: 0.5px solid #00ccff;">[
+<span style="border-bottom: 0.5px solid #00ccff;">[
 `mxochicale/`](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform)</span>
 
 </div>
@@ -37,7 +37,7 @@ NVIDIA-Holoscan platform</span>
 
 <div id="sec-hp">
 
-![](figures/00_template-vector-images/vector/drawing-v00.svg)
+![](figures/00_template-vector-images/vectors/drawing-v00.svg)
 
 </div>
 
