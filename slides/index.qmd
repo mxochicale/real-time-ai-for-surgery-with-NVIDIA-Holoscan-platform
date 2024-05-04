@@ -28,7 +28,7 @@ format:
 <span style="color:#777777; font-size:1.2em; font-weight: bold;"></span>  
 [<br>&nbsp;]{style="padding-bottom: 0.5rem;"}  
 [{{< fa solid home >}}](http://mxochicale.github.io/) Miguel Xochicale, PhD     
-[[[{{< fa brands github >}} `mxochicale/`](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform)]{style="border-bottom: 0.5px solid #00ccff;"}
+[[{{< fa brands github >}} `mxochicale/`](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform)]{style="border-bottom: 0.5px solid #00ccff;"}
 :::
 
 ::: footer
@@ -45,7 +45,7 @@ format:
 
 ## Template for figures 
 ::: {#sec-hp}
-![](figures/00_template-vector-images/vector/drawing-v00.svg)
+![](figures/00_template-vector-images/vectors/drawing-v00.svg)
 :::
 
 ## Template for tabsets
