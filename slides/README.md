@@ -77,4 +77,14 @@ git checkout main
 #https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/
 ```
 
-* Select deploy from branch and select gh-pages
+* Settting up gh-pages
+    * Go to [settings/pages](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform/settings/pages)
+    * In `Build and deployment` go to Branch and select gh-pages: `/(root)` and click `SAVE`
+
+* Commiting and pushing changes
+```
+git add .
+git commit -m 'add message with CI to deply gh-pages #ISSUE_NUMBER'
+git push origin main
+```
+
