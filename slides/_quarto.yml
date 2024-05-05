@@ -11,6 +11,7 @@ website:
   page-navigation: true
   favicon: favicon.svg
   search: false
+  bibliography: references.bib
   twitter-card:
     creator: "@mxochicale"
     card-style: summary
