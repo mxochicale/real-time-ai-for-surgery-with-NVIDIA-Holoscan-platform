@@ -1,7 +1,7 @@
 # Setting up slides in quarto and github
 The following are few steps to setup your quarto slides in github pages.
 
-*  Create templates, ci workflows and adds code of conduct
+## Create templates, ci workflows and adds code of conduct
 ```
 .
 ├── CODE_OF_CONDUCT.md
@@ -16,8 +16,7 @@ The following are few steps to setup your quarto slides in github pages.
 2 directories, 6 files
 ```
 
-* Create scalfolding project in the main branch
-
+## Create scalfolding project in the main branch
 ```
 ├── CONTRIBUTING.md
 ├── LICENSE
@@ -57,7 +56,7 @@ The following are few steps to setup your quarto slides in github pages.
 ```
 
 
-* first commit
+## first commit
 ```
 git add .
 git commit -m ':fire: 1st commit: adds scalfolding for slides #0'
@@ -65,7 +64,7 @@ git branch -M main
 git push -u origin main
 ```
 
-* Create gh-pages branch
+## Create gh-pages branch
 ```
 git checkout --orphan gh-pages 
 #An orphan branch is not connected to the other branches and commits, and its working tree has no files at all. 
@@ -77,14 +76,16 @@ git checkout main
 #https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/
 ```
 
-* Settting up gh-pages
-    * Go to [settings/pages](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform/settings/pages)
-    * In `Build and deployment` go to Branch and select gh-pages: `/(root)` and click `SAVE`
+## Settting up gh-pages
+* Go to [settings/pages](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform/settings/pages)
+* In `Build and deployment` go to Branch and select gh-pages: `/(root)` and click `SAVE`
 
-* Commiting and pushing changes
+## Commiting and pushing changes
 ```
 git add .
 git commit -m 'add message with CI to deply gh-pages #ISSUE_NUMBER'
 git push origin main
 ```
 
+## References
+* https://github.com/mxochicale/tools/tree/main/quarto  

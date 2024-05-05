@@ -1,8 +1,9 @@
 name: Quarto Publish Slides
-
 on:
   push:
-    branches: main
+    branches:
+      - main
+      - 1-cosmetic-changes
   workflow_dispatch:
 
 jobs:
