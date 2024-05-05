@@ -59,15 +59,57 @@ Content for `Tab B`
 
 <div class="columns">
 
-<div class="column" width="40%">
+<div class="column" width="50%">
 
 Left column
 
 </div>
 
-<div class="column" width="60%">
+<div class="column" width="50%">
 
 Right column
+
+</div>
+
+</div>
+
+## Multiple columns with code-blocks
+
+<div class="columns">
+
+<div class="column" width="50%">
+
+``` python
+#Left column
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+</div>
+
+<div class="column" width="50%">
+
+``` python
+#Right column
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
 
 </div>
 
