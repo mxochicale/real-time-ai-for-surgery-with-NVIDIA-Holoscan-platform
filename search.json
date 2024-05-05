@@ -4,41 +4,41 @@
     "href": "index.html#template-for-figures",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Template for figures",
-    "text": "Template for figures\n\n\nFigure 1: This text is part of the caption of this figure"
+    "text": "Template for figures\n\n\nFigure 1: This text is part of the caption of this figure. Note that default size of presentation slides is 1050 x 700.\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#template-for-tabsets",
     "href": "index.html#template-for-tabsets",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Template for tabsets",
-    "text": "Template for tabsets\n\nTab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B"
+    "text": "Template for tabsets\n\nTab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B\n\n\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#template-for-tabsets-with-code-blocks",
     "href": "index.html#template-for-tabsets-with-code-blocks",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Template for tabsets with code-blocks",
-    "text": "Template for tabsets with code-blocks\n\nCode-block ACode-block B\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()"
+    "text": "Template for tabsets with code-blocks\n\nCode-block ACode-block B\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#multiple-columns",
     "href": "index.html#multiple-columns",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Multiple columns",
-    "text": "Multiple columns\n\n\nLeft column\n\nRight column"
+    "text": "Multiple columns\n\n\nLeft column\n\nRight column\n\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#multiple-columns-with-code-blocks",
     "href": "index.html#multiple-columns-with-code-blocks",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Multiple columns with code-blocks",
-    "text": "Multiple columns with code-blocks\n\n\n#Left column\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n#Right column\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()"
+    "text": "Multiple columns with code-blocks\n\n\n#Left column\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n#Right column\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#line-highlighting",
     "href": "index.html#line-highlighting",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Line Highlighting",
-    "text": "Line Highlighting\n\n\nmatplotlib.py\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()"
+    "text": "Line Highlighting\n\n\nmatplotlib.py\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\nSpeaker notes go here."
   }
 ]

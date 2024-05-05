@@ -33,9 +33,21 @@ NVIDIA-Holoscan platform</span>
 4.  [demos](#sec-demos)
 5.  [aob](#sec-aob)
 
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
 ## Template for figures
 
-![](figures/00_template-vector-images/vectors/drawing-v00.svg)
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
 
 ## Template for tabsets
 
@@ -48,6 +60,12 @@ Content for `Tab A`
 ### Tab B
 
 Content for `Tab B`
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
 
 </div>
 
@@ -87,6 +105,12 @@ plt.show()
 
 </div>
 
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
 ## Multiple columns
 
 <div class="columns">
@@ -102,6 +126,12 @@ Left column
 Right column
 
 </div>
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
 
 </div>
 
@@ -147,6 +177,12 @@ plt.show()
 
 </div>
 
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
 ## Line Highlighting
 
 <div class="code-with-filename">
@@ -166,5 +202,11 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
 
 </div>
