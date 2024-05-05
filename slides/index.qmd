@@ -52,12 +52,10 @@ Speaker notes go here.
 :::
 
 
-## Template for figures {.smaller}
-
+## Template for figures 
 ::: {#fig-template}
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
-
 
 This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
 :::
