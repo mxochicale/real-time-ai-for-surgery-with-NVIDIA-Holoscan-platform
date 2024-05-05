@@ -213,4 +213,9 @@ Speaker notes go here.
 
 ## :video_camera: Embedding Yotube Video
 
-<https://www.youtube.com/live/hbf7Ai3jnxY?si=buwuoAYCGplGPJDw&t=1269>
+<https://www.youtube.com/watch?v=hbf7Ai3jnxY&t=1269s>
+
+## Embedding a video.mp4
+
+{background-video=“video.mp4” background-video-loop=“true”
+background-video-muted=“true” background-opacity=0}
