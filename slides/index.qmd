@@ -45,7 +45,7 @@ format:
 
 ## Template for figures {.smaller}
 ::: {#sec-hp}
-![](figures/00_template-vector-images/vectors/drawing-v00.svg){width="100%"}
+![This text is part of the caption of this figure](figures/00_template-vector-images/vectors/drawing-v00.svg){width="100%"}{#fig-template}
 :::
 
 ## Template for tabsets {.smaller}
