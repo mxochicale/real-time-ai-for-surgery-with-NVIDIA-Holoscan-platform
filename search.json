@@ -14,6 +14,13 @@
     "text": "Template for tabsets\n\nTab ATab B\n\n\nContent for Tab A\n\n\nContent for Tab B"
   },
   {
+    "objectID": "index.html#template-for-tabsets-with-code-blocks",
+    "href": "index.html#template-for-tabsets-with-code-blocks",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "Template for tabsets with code-blocks",
+    "text": "Template for tabsets with code-blocks\n\nCode-block ACode-block B\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()"
+  },
+  {
     "objectID": "index.html#multiple-columns",
     "href": "index.html#multiple-columns",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
