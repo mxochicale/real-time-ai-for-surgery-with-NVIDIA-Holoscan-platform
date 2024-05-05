@@ -211,6 +211,6 @@ Speaker notes go here.
 
 </div>
 
-## Embedding Yotube Video
+## :video_camera: Embedding Yotube Video
 
-<https://www.youtube.com/watch?v=Ye8mB6VsUHw&t=2s>
+<https://www.youtube.com/live/hbf7Ai3jnxY?si=buwuoAYCGplGPJDw&t=1269>
