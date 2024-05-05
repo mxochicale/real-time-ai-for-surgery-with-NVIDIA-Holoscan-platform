@@ -35,13 +35,8 @@ NVIDIA-Holoscan platform</span>
 
 ## Template for figures
 
-<div id="sec-hp">
-
 <img src="figures/00_template-vector-images/vectors/drawing-v00.svg"
-style="width:100.0%"
-alt="This text is part of the caption of this figure" />{#fig-template}
-
-</div>
+style="width:100.0%" />
 
 ## Template for tabsets
 
