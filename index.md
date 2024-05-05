@@ -38,7 +38,8 @@ NVIDIA-Holoscan platform</span>
 <div id="sec-hp">
 
 <img src="figures/00_template-vector-images/vectors/drawing-v00.svg"
-style="width:100.0%" />
+style="width:100.0%"
+alt="This text is part of the caption of this figure" />{#fig-template}
 
 </div>
 
