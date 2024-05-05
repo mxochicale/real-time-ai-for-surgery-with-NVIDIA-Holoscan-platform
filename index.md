@@ -37,7 +37,8 @@ NVIDIA-Holoscan platform</span>
 
 <div id="sec-hp">
 
-![](figures/00_template-vector-images/vectors/drawing-v00.svg)
+<img src="figures/00_template-vector-images/vectors/drawing-v00.svg"
+style="width:100.0%" />
 
 </div>
 
