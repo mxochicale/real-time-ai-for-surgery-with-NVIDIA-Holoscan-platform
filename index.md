@@ -210,3 +210,7 @@ plt.show()
 Speaker notes go here.
 
 </div>
+
+## Embedding Yotube Video
+
+<https://www.youtube.com/watch?v=Ye8mB6VsUHw&t=2s>
