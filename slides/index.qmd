@@ -10,6 +10,7 @@ format:
     controls: false
     controls-layout: bottom-right
     preview-links: auto
+    code-block-height: 650px
     logo: favicon.svg
     theme: dark
     #css:
@@ -35,7 +36,7 @@ format:
 [2024-04-20 @ [Link for grid-worms-animation 2023](https://github.com/saforem2/grid-worms-animation/)]{.dim-text style="text-align:left;'}
 :::
 
-# Overview {.smaller}
+# Overview
 1. [overview](#sec-ov)
 2. [holoscan-platform](#sec-hp)
 3. [end-to-end-apps](#sec-e2e)
@@ -47,8 +48,7 @@ format:
 ![](figures/00_template-vector-images/vectors/drawing-v00.svg)
 :::
 
-## Template for tabsets
-
+## Template for tabsets {.smaller}
 ::: {.panel-tabset}
 
 ### Tab A
@@ -74,3 +74,19 @@ Right column
 
 ::::
 
+
+
+## Line Highlighting
+
+```{.python code-line-numbers="|6|9"}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
