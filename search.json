@@ -40,5 +40,12 @@
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Line Highlighting",
     "text": "Line Highlighting\n\n\nmatplotlib.py\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "index.html#holoscan-sdk",
+    "href": "index.html#holoscan-sdk",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "Holoscan-SDK",
+    "text": "Holoscan-SDK"
   }
 ]
