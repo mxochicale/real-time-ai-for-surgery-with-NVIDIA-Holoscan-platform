@@ -174,8 +174,4 @@ ax.grid(True)
 plt.show()
 ```
 
-## References
-::: {#refs}
-:::
-
 
