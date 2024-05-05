@@ -46,13 +46,6 @@
     "href": "index.html#embedding-yotube-video",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "📹 Embedding Yotube Video",
-    "text": "📹 Embedding Yotube Video"
-  },
-  {
-    "objectID": "index.html#embedding-a-video.mp4",
-    "href": "index.html#embedding-a-video.mp4",
-    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
-    "section": "Embedding a video.mp4",
-    "text": "Embedding a video.mp4"
+    "text": "📹 Embedding Yotube Video\n\n\nAvailable aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.\nFurther details to render videos https://quarto.org/docs/authoring/videos.html"
   }
 ]

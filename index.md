@@ -213,6 +213,18 @@ Speaker notes go here.
 
 ## :video_camera: Embedding Yotube Video
 
-<https://www.youtube.com/watch?v=hbf7Ai3jnxY&t=1269s>
+<https://www.youtube.com/embed/hbf7Ai3jnxY>
 
-## Embedding a video.mp4
+<div class="notes">
+
+Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
+
+Further details to render videos
+https://quarto.org/docs/authoring/videos.html
+
+</div>
+
+<!--
+adding HTML comment syntax to not render the following lines
+## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}
+-->
