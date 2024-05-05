@@ -59,7 +59,7 @@ Speaker notes go here.
 ![](figures/00_template-vector-images/drawing-v00.svg)
 
 
-This text is part of the caption of this figure. Note that default size of presentation slides is 1050 x 700.
+This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
 :::
 
 ::: {.notes}

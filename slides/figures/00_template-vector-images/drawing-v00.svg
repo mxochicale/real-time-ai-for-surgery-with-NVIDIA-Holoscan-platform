@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1050"
+   width="1200"
    height="700"
-   viewBox="0 0 277.81251 185.20833"
+   viewBox="0 0 317.50001 185.20833"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
@@ -45,9 +45,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.53168651"
-     inkscape:cx="696.93437"
-     inkscape:cy="227.64657"
+     inkscape:zoom="1.5038365"
+     inkscape:cx="722.64352"
+     inkscape:cy="303.70495"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -86,8 +86,8 @@
        id="rect113"
        width="394.32874"
        height="245.1261"
-       x="-43.025005"
-       y="22.145916" />
+       x="-38.274651"
+       y="19.858709" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:0.237617px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0445533"
@@ -130,12 +130,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.4904995px;line-height:1.25;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.106721"
-       x="240.08334"
-       y="224.92767"
+       x="286.88309"
+       y="227.74269"
        id="text850"><tspan
          sodipodi:role="line"
-         x="240.08334"
-         y="224.92767"
+         x="286.88309"
+         y="227.74269"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.36209869px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;stroke-width:0.106721"
          id="tspan848">B</tspan></text>
     <text
@@ -152,22 +152,22 @@
            id="tspan867"
            style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Light Italic';stroke-width:0.0370419">Description for Routine Mode</tspan></tspan></text>
     <rect
-       y="51.797371"
-       x="2.3576307"
-       height="180.48047"
-       width="273.06866"
+       y="51.853382"
+       x="2.4136436"
+       height="182.30377"
+       width="313.24664"
        id="rect829"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000eff;stroke-width:1.4655271;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.4655271,1.4655271;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000eff;stroke-width:1.57755256;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.57755263, 1.57755263;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.11205006px;line-height:1.25;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0370419"
-       x="44.32317"
-       y="130.91853"
+       x="71.06588"
+       y="142.35457"
        id="text835"><tspan
          sodipodi:role="line"
-         x="44.32317"
-         y="130.91853"
+         x="71.06588"
+         y="142.35457"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.09189987px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#000080;stroke-width:0.0370419"
-         id="tspan833">1050 width X 700 height</tspan></text>
+         id="tspan833">1200 width X 700 height</tspan></text>
   </g>
 </svg>
