@@ -183,7 +183,7 @@ Speaker notes go here.
 
 </div>
 
-## Line Highlighting
+## :construction: Line Highlighting
 
 <div class="code-with-filename">
 
