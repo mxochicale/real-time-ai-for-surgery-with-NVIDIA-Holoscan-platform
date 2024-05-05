@@ -174,8 +174,7 @@ ax.grid(True)
 plt.show()
 ```
 
-## References {style="line-height:1.2em;"}
-
+## References
 ::: {#refs}
 :::
 
