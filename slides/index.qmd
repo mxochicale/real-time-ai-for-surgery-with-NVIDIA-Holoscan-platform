@@ -43,7 +43,7 @@ format:
 4. [demos](#sec-demos)
 5. [aob](#sec-aob)
 
-## Template for figures 
+## Template for figures {.smaller}
 ::: {#sec-hp}
 ![](figures/00_template-vector-images/vectors/drawing-v00.svg)
 :::
@@ -64,12 +64,54 @@ Content for `Tab B`
 ## Multiple columns
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 Left column
+
+
 :::
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 Right column
+
+
+:::
+
+::::
+
+
+## Multiple columns with code-blocks
+:::: {.columns}
+
+::: {.column width="50%"}
+```{.python}
+#Left column
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+:::
+
+::: {.column width="50%"}
+```{.python}
+#Right column
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
 :::
 
 ::::
