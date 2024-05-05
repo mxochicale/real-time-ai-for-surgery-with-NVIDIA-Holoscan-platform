@@ -50,7 +50,9 @@ format:
 ## Template for figures {.smaller}
 
 ::: {#fig-template}
-![](figures/00_template-vector-images/vectors/drawing-v00.svg){width="100%"}
+
+![](figures/00_template-vector-images/vectors/drawing-v00.svg)
+
 This text is part of the caption of this figure
 :::
 
