@@ -120,7 +120,7 @@ Right column
 ::::
 
 
-## Multiple columns with code-blocks
+## Multiple columns with code-blocks {.smaller}
 :::: {.columns}
 
 ::: {.column width="50%"}
