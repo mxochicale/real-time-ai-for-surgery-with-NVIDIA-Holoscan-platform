@@ -11,6 +11,10 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     code-block-height: 650px
+    code-line-numbers: true
+    code-overflow: scroll
+    default-image-extension: svg
+    fig-align: center
     logo: favicon.svg
     theme: dark
     #css:
