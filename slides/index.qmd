@@ -220,3 +220,7 @@ Speaker notes go here.
 
 
 
+## Embedding Yotube Video
+
+{{< video https://www.youtube.com/watch?v=Ye8mB6VsUHw&t=2s width="850" height="475">}}
+
