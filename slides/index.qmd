@@ -198,9 +198,9 @@ Speaker notes go here.
 
 
 
-## Line Highlighting
+## :construction: Line Highlighting
 
-```{.python filename="matplotlib.py" code-line-numbers="6-9"}
+```{.python filename="matplotlib.py" code-line-numbers="|6-9"}
 
 import numpy as np
 import matplotlib.pyplot as plt
