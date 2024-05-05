@@ -212,6 +212,10 @@ Speaker notes go here.
 
 ## :construction: Line Highlighting (N lines)
 
+<div class="code-with-filename">
+
+**unit-test-example.py**
+
 ``` python
 import datetime
 import unittest
@@ -257,6 +261,8 @@ class TestGetStockData(unittest.TestCase):
 
 unittest.main()
 ```
+
+</div>
 
 <div class="notes">
 

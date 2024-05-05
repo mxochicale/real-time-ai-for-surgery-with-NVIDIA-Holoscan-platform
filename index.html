@@ -637,7 +637,11 @@ Figure&nbsp;1: This text is part of the caption of this figure. Note that defaul
 </section>
 <section id="line-highlighting-n-lines" class="slide level2">
 <h2><span class="emoji" data-emoji="construction">🚧</span> Line Highlighting (N lines)</h2>
-<div class="sourceCode" id="cb6" data-code-line-numbers="|16-20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> datetime</span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>unit-test-example.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="unit-test-example.py" data-code-line-numbers="|30-36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> datetime</span>
 <span id="cb6-2"><a></a><span class="im">import</span> unittest</span>
 <span id="cb6-3"><a></a></span>
 <span id="cb6-4"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -680,6 +684,7 @@ Figure&nbsp;1: This text is part of the caption of this figure. Note that defaul
 <span id="cb6-41"><a></a>        <span class="va">self</span>.assertLessEqual((datetime.datetime.today() <span class="op">-</span> most_recent_date).days, <span class="dv">7</span>)</span>
 <span id="cb6-42"><a></a></span>
 <span id="cb6-43"><a></a>unittest.main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <aside class="notes">
 <p>Reference for the code!</p>
 <p>https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/</p>
