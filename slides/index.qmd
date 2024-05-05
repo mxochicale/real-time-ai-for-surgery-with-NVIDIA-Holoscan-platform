@@ -47,14 +47,26 @@ format:
 4. [demos](#sec-demos)
 5. [aob](#sec-aob)
 
+::: {.notes}
+Speaker notes go here.
+:::
+
+
 ## Template for figures {.smaller}
 
 ::: {#fig-template}
 
-![](figures/00_template-vector-images/vectors/drawing-v00.svg)
+![](figures/00_template-vector-images/drawing-v00.svg)
 
-This text is part of the caption of this figure
+
+This text is part of the caption of this figure. Note that default size of presentation slides is 1050 x 700.
 :::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
 
 
 ## Template for tabsets {.smaller}
@@ -69,6 +81,12 @@ Content for `Tab A`
 Content for `Tab B`
 
 :::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
 
 
 ## Template for tabsets with code-blocks {.smaller}
@@ -89,7 +107,6 @@ ax.grid(True)
 plt.show()
 ```
 
-
 ### Code-block B
 
 ```{.python}
@@ -107,8 +124,9 @@ plt.show()
 
 :::
 
-
-
+::: {.notes}
+Speaker notes go here.
+:::
 
 
 ## Multiple columns
@@ -127,6 +145,14 @@ Right column
 :::
 
 ::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
+
+
 
 
 ## Multiple columns with code-blocks {.smaller}
@@ -166,6 +192,10 @@ plt.show()
 
 ::::
 
+::: {.notes}
+Speaker notes go here.
+:::
+
 
 
 ## Line Highlighting
@@ -183,5 +213,11 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
 
 
