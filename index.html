@@ -604,26 +604,85 @@ Figure&nbsp;1: This text is part of the caption of this figure. Note that defaul
           display:block!important;
       }</style></aside>
 </section>
-<section id="line-highlighting" class="slide level2">
-<h2><span class="emoji" data-emoji="construction">🚧</span> Line Highlighting</h2>
+<section id="line-highlighting-10-lines" class="slide level2">
+<h2><span class="emoji" data-emoji="construction">🚧</span> Line Highlighting (10 lines)</h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>matplotlib.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb5" data-filename="matplotlib.py" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a></span>
-<span id="cb5-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb5-6"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb5-7"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb5-8"><a></a>ax.plot(theta, r)</span>
-<span id="cb5-9"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb5-10"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb5-11"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-filename="matplotlib.py" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb5-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb5-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb5-7"><a></a>ax.plot(theta, r)</span>
+<span id="cb5-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb5-9"><a></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>Speaker notes go here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="line-highlighting-n-lines" class="slide level2">
+<h2><span class="emoji" data-emoji="construction">🚧</span> Line Highlighting (N lines)</h2>
+<div class="sourceCode" id="cb6" data-code-line-numbers="|16-20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> datetime</span>
+<span id="cb6-2"><a></a><span class="im">import</span> unittest</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-5"><a></a><span class="im">import</span> pandas_datareader.data <span class="im">as</span> web</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a><span class="kw">def</span> get_stock_data(ticker):</span>
+<span id="cb6-8"><a></a>    <span class="co">"""pull data from stooq"""</span></span>
+<span id="cb6-9"><a></a>    df <span class="op">=</span> web.DataReader(ticker, <span class="st">'yahoo'</span>)</span>
+<span id="cb6-10"><a></a>    <span class="cf">return</span> df</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a><span class="kw">class</span> TestGetStockData(unittest.TestCase):</span>
+<span id="cb6-13"><a></a>    <span class="at">@classmethod</span></span>
+<span id="cb6-14"><a></a>    <span class="kw">def</span> setUpClass(<span class="va">self</span>):</span>
+<span id="cb6-15"><a></a>        <span class="co">"""We only want to pull this data once for each TestCase since it is an expensive operation"""</span></span>
+<span id="cb6-16"><a></a>        <span class="va">self</span>.df <span class="op">=</span> get_stock_data(<span class="st">'^DJI'</span>)</span>
+<span id="cb6-17"><a></a></span>
+<span id="cb6-18"><a></a>    <span class="kw">def</span> test_columns_present(<span class="va">self</span>):</span>
+<span id="cb6-19"><a></a>        <span class="co">"""ensures that the expected columns are all present"""</span></span>
+<span id="cb6-20"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Open"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb6-21"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"High"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb6-22"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Low"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb6-23"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Close"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb6-24"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Volume"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb6-25"><a></a></span>
+<span id="cb6-26"><a></a>    <span class="kw">def</span> test_non_empty(<span class="va">self</span>):</span>
+<span id="cb6-27"><a></a>        <span class="co">"""ensures that there is more than one row of data"""</span></span>
+<span id="cb6-28"><a></a>        <span class="va">self</span>.assertNotEqual(<span class="bu">len</span>(<span class="va">self</span>.df.index), <span class="dv">0</span>)</span>
+<span id="cb6-29"><a></a></span>
+<span id="cb6-30"><a></a>    <span class="kw">def</span> test_high_low(<span class="va">self</span>):</span>
+<span id="cb6-31"><a></a>        <span class="co">"""ensure high and low are the highest and lowest in the same row"""</span></span>
+<span id="cb6-32"><a></a>        ohlc <span class="op">=</span> <span class="va">self</span>.df[[<span class="st">"Open"</span>,<span class="st">"High"</span>,<span class="st">"Low"</span>,<span class="st">"Close"</span>]]</span>
+<span id="cb6-33"><a></a>        highest <span class="op">=</span> ohlc.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-34"><a></a>        lowest <span class="op">=</span> ohlc.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-35"><a></a>        <span class="va">self</span>.assertTrue(ohlc.le(highest, axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="va">None</span>))</span>
+<span id="cb6-36"><a></a>        <span class="va">self</span>.assertTrue(ohlc.ge(lowest, axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="va">None</span>))</span>
+<span id="cb6-37"><a></a></span>
+<span id="cb6-38"><a></a>    <span class="kw">def</span> test_most_recent_within_week(<span class="va">self</span>):</span>
+<span id="cb6-39"><a></a>        <span class="co">"""most recent data was collected within the last week"""</span></span>
+<span id="cb6-40"><a></a>        most_recent_date <span class="op">=</span> pd.to_datetime(<span class="va">self</span>.df.index[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb6-41"><a></a>        <span class="va">self</span>.assertLessEqual((datetime.datetime.today() <span class="op">-</span> most_recent_date).days, <span class="dv">7</span>)</span>
+<span id="cb6-42"><a></a></span>
+<span id="cb6-43"><a></a>unittest.main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>Reference for the code!</p>
+<p>https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
