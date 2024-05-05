@@ -210,5 +210,3 @@ plt.show()
 Speaker notes go here.
 
 </div>
-
-## IFrame background with google page
