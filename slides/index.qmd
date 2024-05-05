@@ -48,9 +48,12 @@ format:
 5. [aob](#sec-aob)
 
 ## Template for figures {.smaller}
-::: {#sec-hp}
-![This text is part of the caption of this figure](figures/00_template-vector-images/vectors/drawing-v00.svg){width="100%"}{#fig-template}
+
+::: {#fig-template}
+![](figures/00_template-vector-images/vectors/drawing-v00.svg){width="100%"}
+This text is part of the caption of this figure
 :::
+
 
 ## Template for tabsets {.smaller}
 ::: {.panel-tabset}
