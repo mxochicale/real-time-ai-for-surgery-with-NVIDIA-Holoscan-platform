@@ -222,7 +222,8 @@ Speaker notes go here.
 ## :video_camera: Embedding Yotube Video
 {{< video https://www.youtube.com/embed/hbf7Ai3jnxY
     start="1269"
-    height="100%"
+    width="90%" 
+    height="90%"
 >}}
 
 ::: {.notes}
