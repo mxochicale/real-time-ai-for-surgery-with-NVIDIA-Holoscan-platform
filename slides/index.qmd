@@ -170,7 +170,8 @@ plt.show()
 
 ## Line Highlighting
 
-```{.python code-line-numbers="|6|9"}
+```{.python filename="matplotlib.py" code-line-numbers="6-9"}
+
 import numpy as np
 import matplotlib.pyplot as plt
 
