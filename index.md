@@ -149,7 +149,12 @@ plt.show()
 
 ## Line Highlighting
 
+<div class="code-with-filename">
+
+**matplotlib.py**
+
 ``` python
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -161,3 +166,5 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
+
+</div>
