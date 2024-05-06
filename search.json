@@ -4,14 +4,42 @@
     "href": "index.html#content",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Content",
-    "text": "Content\n\nMy background\nHoloscan-platform\nEnd-to-end-apps for surgery\nDemos\nEvent annoucement\n\n\nContent"
+    "text": "Content\n\nMy background\nEndoscopic Pituitary Tumor Surgery\nHoloscan-platform\nEnd-to-end-apps for surgery\nDemos\nEvent announcement\n\n\n\nContent"
+  },
+  {
+    "objectID": "index.html#my-background",
+    "href": "index.html#my-background",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "My background",
+    "text": "My background\n\n\nFigure 1\n\nMy background"
+  },
+  {
+    "objectID": "index.html#endoscopic-pituitary-tumor-surgery",
+    "href": "index.html#endoscopic-pituitary-tumor-surgery",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "Endoscopic Pituitary Tumor Surgery",
+    "text": "Endoscopic Pituitary Tumor Surgery\n\n\n\n\n\n\nFigure 2: This text is part of the caption of this figure 1.\n\n\n\n\nEndoscopic Pituitary Tumor Surgery\n\nMao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. “PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery.” International Journal of Computer Assisted Radiology and Surgery (2024): 1-8."
+  },
+  {
+    "objectID": "index.html#holoscan-platform",
+    "href": "index.html#holoscan-platform",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "Holoscan platform",
+    "text": "Holoscan platform\n\n\nHoloscan-SDK\n\nClara-AGX\n\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "index.html#end-to-end-python-based-applications",
+    "href": "index.html#end-to-end-python-based-applications",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "End-to-end python-based applications",
+    "text": "End-to-end python-based applications\n\nCode-block ACode-block B\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#template-for-figures",
     "href": "index.html#template-for-figures",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Template for figures",
-    "text": "Template for figures\n\n\nFigure 1: This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.\n\nSpeaker notes go here."
+    "text": "Template for figures\n\n\nFigure 3: This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#template-for-tabsets",

@@ -26,17 +26,114 @@ Collaborations, UCL</span>
 
 </div>
 
+<div class="notes">
+
+First slide
+
+</div>
+
 ## Content
 
-- [My background](#sec-ov)
-- [Holoscan-platform](#sec-hp)
-- [End-to-end-apps for surgery](#sec-e2e)
-- [Demos](#sec-demos)
-- [Event annoucement](#sec-aob)
+1.  [My background](#sec-ov)
+2.  Endoscopic Pituitary Tumor Surgery
+3.  [Holoscan-platform](#sec-hp)
+4.  [End-to-end-apps for surgery](#sec-e2e)
+5.  [Demos](#sec-demos)
+6.  [Event announcement](#sec-aob)
+
+<!--
+6. [Acknowledgement](#sec-aob)
+-->
 
 <div class="notes">
 
 Content
+
+</div>
+
+## My background
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+<div class="notes">
+
+My background
+
+</div>
+
+## Endoscopic Pituitary Tumor Surgery
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+<div class="notes">
+
+Endoscopic Pituitary Tumor Surgery
+
+</div>
+
+## Holoscan platform
+
+<div class="columns">
+
+<div class="column" width="50%">
+
+Holoscan-SDK
+
+</div>
+
+<div class="column" width="50%">
+
+Clara-AGX
+
+</div>
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
+## End-to-end python-based applications
+
+<div class="panel-tabset">
+
+### Code-block A
+
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+### Code-block B
+
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
 
 </div>
 
