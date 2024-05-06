@@ -9,11 +9,12 @@ Miguel Xochicale
 AI for surgery</span>  
 <span style="color:#939393; font-size:1.5em; font-weight: bold;">with
 NVIDIA-Holoscan platform</span>  
-<span style="color:#777777; font-size:1.2em; font-weight: bold;"></span>  
+<span style="color:#777777; font-size:1.2em; font-weight: bold;">ARC
+Collaborations, UCL</span>  
 <span style="padding-bottom: 0.5rem;"><br> </span>  
 [](http://mxochicale.github.io/) Miguel Xochicale, PhD  
 <span style="border-bottom: 0.5px solid #00ccff;">[
-`mxochicale/`](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform)</span>
+`mxochicale`](https://github.com/mxochicale/real-time-ai-for-surgery-with-NVIDIA-Holoscan-platform)</span>
 
 </div>
 
@@ -25,17 +26,17 @@ NVIDIA-Holoscan platform</span>
 
 </div>
 
-# Overview
+## Agenda
 
-1.  [overview](#sec-ov)
-2.  [holoscan-platform](#sec-hp)
-3.  [end-to-end-apps](#sec-e2e)
-4.  [demos](#sec-demos)
-5.  [aob](#sec-aob)
+1.  [My background](#sec-ov)
+2.  [Holoscan-platform](#sec-hp)
+3.  [End-to-end-apps for surgery](#sec-e2e)
+4.  [Demos](#sec-demos)
+5.  [Event annoucement](#sec-aob)
 
 <div class="notes">
 
-Speaker notes go here.
+Agenda
 
 </div>
 
