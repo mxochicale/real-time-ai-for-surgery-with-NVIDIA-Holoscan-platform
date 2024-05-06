@@ -35,7 +35,8 @@ First slide
 ## Content
 
 1.  [My background](#sec-ov)
-2.  Endoscopic Pituitary Tumor Surgery
+2.  [Endoscopic Pituitary Tumor
+    Surgery](#endoscopic-pituitary-tumor-surgery)
 3.  [Holoscan-platform](#sec-hp)
 4.  [End-to-end-apps for surgery](#sec-e2e)
 5.  [Demos](#sec-demos)
@@ -67,7 +68,38 @@ My background
 
 <div class="notes">
 
-Endoscopic Pituitary Tumor Surgery
+Endoscopic Pituitary Tumor Surgery [^1].
+
+</div>
+
+## :medical_symbol: Endoscopic Pituitary Tumor Surgery
+
+## :video_camera: Embedding Yotube Video
+
+<https://www.youtube.com/embed/EwlRdxokdGk>
+
+<div class="notes">
+
+94,961 views 20 Nov 2012 Barrow Neurological Institute Neurosurgeon
+Andrew S. Little, MD, demonstrates the process of removing a tumor of
+the pituitary gland using minimally-invasive endoscopic neurosurgery.
+https://www.youtube.com/watch?app=desktop&v=EwlRdxokdGk
+
+553,519 views 28 May 2017 The pituitary gland is located at the bottom
+of your brain and above the inside of your nose. Endoscopic pituitary
+surgery (also called transsphenoidal endoscopic surgery) is a minimally
+invasive surgery performed through the nose and sphenoid sinus to remove
+pituitary tumors. https://www.youtube.com/watch?v=lwmgNLwt_ts
+
+</div>
+
+## :medical_symbol: Real-time AI Applications for Surgery
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+<div class="notes">
+
+Speaker notes go here.
 
 </div>
 
@@ -387,3 +419,9 @@ https://quarto.org/docs/authoring/videos.html
 adding HTML comment syntax to not render the following lines
 ## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}
 -->
+
+[^1]: Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C.
+    Williams, John G. Hanrahan, Anouk Borg et al. “PitSurgRT: real-time
+    localization of critical anatomical structures in endoscopic
+    pituitary surgery.” International Journal of Computer Assisted
+    Radiology and Surgery (2024): 1-8.
