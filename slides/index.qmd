@@ -47,7 +47,7 @@ First slide
 
 ## Content
 1. [My background](#sec-ov)
-2. Endoscopic Pituitary Tumor Surgery
+2. [Endoscopic Pituitary Tumor Surgery]
 3. [Holoscan-platform](#sec-hp)
 4. [End-to-end-apps for surgery](#sec-e2e)
 5. [Demos](#sec-demos)
@@ -88,11 +88,53 @@ My background
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
 
-This text is part of the caption of this figure ^[Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. "PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery." International Journal of Computer Assisted Radiology and Surgery (2024): 1-8.].
+This text is part of the caption of this figure
 :::
 
 ::: {.notes}
 Endoscopic Pituitary Tumor Surgery
+^[Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. "PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery." International Journal of Computer Assisted Radiology and Surgery (2024): 1-8.].
+:::
+
+
+
+## :medical_symbol: Endoscopic Pituitary Tumor Surgery
+## :video_camera: Embedding Yotube Video
+{{< video https://www.youtube.com/embed/EwlRdxokdGk
+    start="1269"
+    width="85%" 
+    height="85%"
+>}}
+
+::: {.notes}
+
+
+94,961 views  20 Nov 2012
+Barrow Neurological Institute Neurosurgeon Andrew S. Little, MD, demonstrates the process of removing a tumor of the pituitary gland using minimally-invasive endoscopic neurosurgery.
+https://www.youtube.com/watch?app=desktop&v=EwlRdxokdGk
+
+553,519 views  28 May 2017
+The pituitary gland is located at the bottom of your brain and above the inside of your nose. Endoscopic pituitary surgery (also called transsphenoidal endoscopic surgery) is a minimally invasive surgery performed through the nose and sphenoid sinus to remove pituitary tumors.
+https://www.youtube.com/watch?v=lwmgNLwt_ts
+:::
+
+
+
+
+
+
+
+
+## :medical_symbol: Real-time AI Applications for Surgery
+::: {#fig-template}
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
+:::
+
+::: {.notes}
+Speaker notes go here.
 :::
 
 
