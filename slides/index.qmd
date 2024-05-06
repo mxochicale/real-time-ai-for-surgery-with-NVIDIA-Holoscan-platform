@@ -83,23 +83,8 @@ My background
 
 
 
-## Endoscopic Pituitary Tumor Surgery
-::: {#fig-epts}
-
-![](figures/00_template-vector-images/drawing-v00.svg)
-
-This text is part of the caption of this figure
-:::
-
-::: {.notes}
-Endoscopic Pituitary Tumor Surgery
-^[Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. "PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery." International Journal of Computer Assisted Radiology and Surgery (2024): 1-8.].
-:::
-
-
 
 ## :medical_symbol: Endoscopic Pituitary Tumor Surgery
-## :video_camera: Embedding Yotube Video
 {{< video https://www.youtube.com/embed/EwlRdxokdGk
     start="1269"
     width="85%" 
@@ -108,7 +93,6 @@ Endoscopic Pituitary Tumor Surgery
 
 ::: {.notes}
 
-
 94,961 views  20 Nov 2012
 Barrow Neurological Institute Neurosurgeon Andrew S. Little, MD, demonstrates the process of removing a tumor of the pituitary gland using minimally-invasive endoscopic neurosurgery.
 https://www.youtube.com/watch?app=desktop&v=EwlRdxokdGk
@@ -116,6 +100,10 @@ https://www.youtube.com/watch?app=desktop&v=EwlRdxokdGk
 553,519 views  28 May 2017
 The pituitary gland is located at the bottom of your brain and above the inside of your nose. Endoscopic pituitary surgery (also called transsphenoidal endoscopic surgery) is a minimally invasive surgery performed through the nose and sphenoid sinus to remove pituitary tumors.
 https://www.youtube.com/watch?v=lwmgNLwt_ts
+
+
+^[Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. "PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery." International Journal of Computer Assisted Radiology and Surgery (2024): 1-8.].
+
 :::
 
 
@@ -123,9 +111,7 @@ https://www.youtube.com/watch?v=lwmgNLwt_ts
 
 
 
-
-
-## :medical_symbol: Real-time AI Applications for Surgery
+## Real-time AI Applications for Surgery
 ::: {#fig-template}
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
@@ -466,8 +452,8 @@ https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-pyth
 ## :video_camera: Embedding Yotube Video
 {{< video https://www.youtube.com/embed/hbf7Ai3jnxY
     start="1269"
-    width="90%" 
-    height="90%"
+    width="85%" 
+    height="85%"
 >}}
 
 ::: {.notes}
