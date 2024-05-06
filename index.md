@@ -9,7 +9,7 @@ Miguel Xochicale
 AI for surgery</span>  
 <span style="color:#939393; font-size:1.5em; font-weight: bold;">with
 NVIDIA-Holoscan platform</span>  
-<span style="color:#777777; font-size:1.2em; font-weight: bold;">ARC
+<span style="color:#777777; font-size:1.2em; font-weight: normal;">ARC
 Collaborations, UCL</span>  
 <span style="padding-bottom: 0.5rem;"><br> </span>  
 [](http://mxochicale.github.io/) Miguel Xochicale, PhD  
@@ -26,17 +26,17 @@ Collaborations, UCL</span>
 
 </div>
 
-## Agenda
+## Content
 
-1.  [My background](#sec-ov)
-2.  [Holoscan-platform](#sec-hp)
-3.  [End-to-end-apps for surgery](#sec-e2e)
-4.  [Demos](#sec-demos)
-5.  [Event annoucement](#sec-aob)
+- [My background](#sec-ov)
+- [Holoscan-platform](#sec-hp)
+- [End-to-end-apps for surgery](#sec-e2e)
+- [Demos](#sec-demos)
+- [Event annoucement](#sec-aob)
 
 <div class="notes">
 
-Agenda
+Content
 
 </div>
 
