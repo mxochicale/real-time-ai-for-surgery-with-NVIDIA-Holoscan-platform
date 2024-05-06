@@ -4,7 +4,7 @@
     "href": "index.html#content",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Content",
-    "text": "Content\n\nMy background\n[Endoscopic Pituitary Tumor Surgery]\nHoloscan-platform\nEnd-to-end-apps for surgery\nDemos\nEvent announcement\n\n\n\nContent"
+    "text": "Content\n\nMy background\nEndoscopic Pituitary Tumor Surgery\nHoloscan-platform\nEnd-to-end-apps for surgery\nDemos\nEvent announcement\n\n\n\nContent"
   },
   {
     "objectID": "index.html#my-background",
@@ -14,11 +14,11 @@
     "text": "My background\n\n\nFigure 1\n\nMy background"
   },
   {
-    "objectID": "index.html#endoscopic-pituitary-tumor-surgery",
-    "href": "index.html#endoscopic-pituitary-tumor-surgery",
+    "objectID": "index.html#endoscopic-pituitary-surgery",
+    "href": "index.html#endoscopic-pituitary-surgery",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
-    "section": "⚕️ Endoscopic Pituitary Tumor Surgery",
-    "text": "⚕️ Endoscopic Pituitary Tumor Surgery\n\n\n94,961 views 20 Nov 2012 Barrow Neurological Institute Neurosurgeon Andrew S. Little, MD, demonstrates the process of removing a tumor of the pituitary gland using minimally-invasive endoscopic neurosurgery. https://www.youtube.com/watch?app=desktop&v=EwlRdxokdGk\n553,519 views 28 May 2017 The pituitary gland is located at the bottom of your brain and above the inside of your nose. Endoscopic pituitary surgery (also called transsphenoidal endoscopic surgery) is a minimally invasive surgery performed through the nose and sphenoid sinus to remove pituitary tumors. https://www.youtube.com/watch?v=lwmgNLwt_ts\n1.\n\nMao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. “PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery.” International Journal of Computer Assisted Radiology and Surgery (2024): 1-8."
+    "section": "⚕️ Endoscopic Pituitary Surgery",
+    "text": "⚕️ Endoscopic Pituitary Surgery\n\n\n94,961 views 20 Nov 2012 Barrow Neurological Institute Neurosurgeon Andrew S. Little, MD, demonstrates the process of removing a tumor of the pituitary gland using minimally-invasive endoscopic neurosurgery. https://www.youtube.com/watch?app=desktop&v=EwlRdxokdGk\n553,519 views 28 May 2017 The pituitary gland is located at the bottom of your brain and above the inside of your nose. Endoscopic pituitary surgery (also called transsphenoidal endoscopic surgery) is a minimally invasive surgery performed through the nose and sphenoid sinus to remove pituitary tumors. https://www.youtube.com/watch?v=lwmgNLwt_ts\nMao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. “PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery.” International Journal of Computer Assisted Radiology and Surgery (2024): 1-8."
   },
   {
     "objectID": "index.html#real-time-ai-applications-for-surgery",

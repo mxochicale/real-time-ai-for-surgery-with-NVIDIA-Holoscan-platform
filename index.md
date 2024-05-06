@@ -35,7 +35,7 @@ First slide
 ## Content
 
 1.  [My background](#sec-ov)
-2.  \[Endoscopic Pituitary Tumor Surgery\]
+2.  [Endoscopic Pituitary Tumor Surgery](#sec-surg)
 3.  [Holoscan-platform](#sec-hp)
 4.  [End-to-end-apps for surgery](#sec-e2e)
 5.  [Demos](#sec-demos)
@@ -61,7 +61,7 @@ My background
 
 </div>
 
-## :medical_symbol: Endoscopic Pituitary Tumor Surgery
+## :medical_symbol: Endoscopic Pituitary Surgery
 
 <https://www.youtube.com/embed/EwlRdxokdGk>
 
@@ -78,7 +78,11 @@ surgery (also called transsphenoidal endoscopic surgery) is a minimally
 invasive surgery performed through the nose and sphenoid sinus to remove
 pituitary tumors. https://www.youtube.com/watch?v=lwmgNLwt_ts
 
-[^1].
+Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C.
+Williams, John G. Hanrahan, Anouk Borg et al. “PitSurgRT: real-time
+localization of critical anatomical structures in endoscopic pituitary
+surgery.” International Journal of Computer Assisted Radiology and
+Surgery (2024): 1-8.
 
 </div>
 
@@ -408,9 +412,3 @@ https://quarto.org/docs/authoring/videos.html
 adding HTML comment syntax to not render the following lines
 ## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}
 -->
-
-[^1]: Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C.
-    Williams, John G. Hanrahan, Anouk Borg et al. “PitSurgRT: real-time
-    localization of critical anatomical structures in endoscopic
-    pituitary surgery.” International Journal of Computer Assisted
-    Radiology and Surgery (2024): 1-8.
