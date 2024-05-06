@@ -86,7 +86,7 @@ My background
 
 ## :medical_symbol: Endoscopic Pituitary Surgery
 {{< video https://www.youtube.com/embed/EwlRdxokdGk
-    start="1269"
+    start="11"
     width="85%" 
     height="85%"
 >}}
