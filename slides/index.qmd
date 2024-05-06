@@ -40,16 +40,140 @@ format:
 [2024-04-20 @ [Link for grid-worms-animation 2023](https://github.com/saforem2/grid-worms-animation/)]{.dim-text style="text-align:left;'}
 :::
 
+::: {.notes}
+First slide
+:::
+
+
 ## Content
-* [My background](#sec-ov)
-* [Holoscan-platform](#sec-hp)
-* [End-to-end-apps for surgery](#sec-e2e)
-* [Demos](#sec-demos)
-* [Event annoucement](#sec-aob)
+1. [My background](#sec-ov)
+2. Endoscopic Pituitary Tumor Surgery
+3. [Holoscan-platform](#sec-hp)
+4. [End-to-end-apps for surgery](#sec-e2e)
+5. [Demos](#sec-demos)
+6. [Event announcement](#sec-aob)
+
+<!--
+6. [Acknowledgement](#sec-aob)
+-->
+
 
 ::: {.notes}
 Content
 :::
+
+
+
+
+
+
+## My background
+::: {#fig-mb}
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+:::
+
+::: {.notes}
+My background
+:::
+
+
+
+
+
+
+## Endoscopic Pituitary Tumor Surgery
+::: {#fig-epts}
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+This text is part of the caption of this figure ^[Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, John G. Hanrahan, Anouk Borg et al. "PitSurgRT: real-time localization of critical anatomical structures in endoscopic pituitary surgery." International Journal of Computer Assisted Radiology and Surgery (2024): 1-8.].
+:::
+
+::: {.notes}
+Endoscopic Pituitary Tumor Surgery
+:::
+
+
+
+
+
+
+
+## Holoscan platform
+:::: {.columns}
+
+::: {.column width="50%"}
+Holoscan-SDK
+
+
+:::
+
+::: {.column width="50%"}
+Clara-AGX
+
+
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
+
+
+
+
+
+## End-to-end python-based applications {.smaller}
+::: {.panel-tabset}
+
+### Code-block A
+
+```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+### Code-block B
+
+```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+
+
+
+
+
+
+
 
 
 ## Template for figures 
@@ -63,6 +187,10 @@ This text is part of the caption of this figure. Note that default size of prese
 ::: {.notes}
 Speaker notes go here.
 :::
+
+
+
+
 
 
 
@@ -125,6 +253,11 @@ plt.show()
 ::: {.notes}
 Speaker notes go here.
 :::
+
+
+
+
+
 
 
 ## Multiple columns
@@ -196,6 +329,10 @@ Speaker notes go here.
 
 
 
+
+
+
+
 ## :construction: Line Highlighting (10 lines)
 
 ```{.python filename="matplotlib.py" code-line-numbers="|6-9"}
@@ -214,6 +351,14 @@ plt.show()
 ::: {.notes}
 Speaker notes go here.
 :::
+
+
+
+
+
+
+
+
 
 
 
@@ -271,6 +416,11 @@ https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-pyth
 :::
 
 
+
+
+
+
+
 ## :video_camera: Embedding Yotube Video
 {{< video https://www.youtube.com/embed/hbf7Ai3jnxY
     start="1269"
@@ -284,6 +434,12 @@ Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
 Further details to render videos
 https://quarto.org/docs/authoring/videos.html
 :::
+
+
+
+
+
+
 
 
 <!--
