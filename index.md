@@ -35,8 +35,7 @@ First slide
 ## Content
 
 1.  [My background](#sec-ov)
-2.  [Endoscopic Pituitary Tumor
-    Surgery](#endoscopic-pituitary-tumor-surgery)
+2.  \[Endoscopic Pituitary Tumor Surgery\]
 3.  [Holoscan-platform](#sec-hp)
 4.  [End-to-end-apps for surgery](#sec-e2e)
 5.  [Demos](#sec-demos)
@@ -62,19 +61,7 @@ My background
 
 </div>
 
-## Endoscopic Pituitary Tumor Surgery
-
-![](figures/00_template-vector-images/drawing-v00.svg)
-
-<div class="notes">
-
-Endoscopic Pituitary Tumor Surgery [^1].
-
-</div>
-
 ## :medical_symbol: Endoscopic Pituitary Tumor Surgery
-
-## :video_camera: Embedding Yotube Video
 
 <https://www.youtube.com/embed/EwlRdxokdGk>
 
@@ -91,9 +78,11 @@ surgery (also called transsphenoidal endoscopic surgery) is a minimally
 invasive surgery performed through the nose and sphenoid sinus to remove
 pituitary tumors. https://www.youtube.com/watch?v=lwmgNLwt_ts
 
+[^1].
+
 </div>
 
-## :medical_symbol: Real-time AI Applications for Surgery
+## Real-time AI Applications for Surgery
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
 
