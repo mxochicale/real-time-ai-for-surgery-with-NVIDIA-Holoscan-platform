@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - 1-cosmetic-changes
+      - 3-drafting-slides
   workflow_dispatch:
 
 jobs:
