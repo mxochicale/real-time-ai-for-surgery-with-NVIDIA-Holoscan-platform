@@ -750,40 +750,38 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
 <div class="code-with-filename-file">
 <pre><strong>multi-ai.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="multi-ai.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>...</span>
-<span id="cb3-2"><a></a>        <span class="co"># Define the workflow</span></span>
-<span id="cb3-3"><a></a>        <span class="cf">if</span> is_v4l2:</span>
-<span id="cb3-4"><a></a>            <span class="va">self</span>.add_flow(source, viz, {(<span class="st">"signal"</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-5"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_v4l2, {(<span class="st">"signal"</span>, <span class="st">"source_video"</span>)})</span>
-<span id="cb3-6"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_phasenet_v4l2, {(<span class="st">"signal"</span>, <span class="st">"source_video"</span>)})</span>
-<span id="cb3-7"><a></a>            <span class="cf">for</span> op <span class="kw">in</span> [preprocessor_v4l2, preprocessor_phasenet_v4l2]:</span>
-<span id="cb3-8"><a></a>                <span class="va">self</span>.add_flow(op, multi_ai_inference_v4l2, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-9"><a></a>            <span class="co">### connect infereceOp to postprocessors</span></span>
-<span id="cb3-10"><a></a>            <span class="va">self</span>.add_flow(</span>
-<span id="cb3-11"><a></a>                multi_ai_inference_v4l2, multiheadOp, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor_postproOp"</span>)}</span>
-<span id="cb3-12"><a></a>            )</span>
-<span id="cb3-13"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_v4l2, segpostprocessor, {(<span class="st">"transmitter"</span>, <span class="st">""</span>)})</span>
-<span id="cb3-14"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_v4l2, phasenetOp, {(<span class="st">""</span>, <span class="st">"in"</span>)})</span>
-<span id="cb3-15"><a></a></span>
-<span id="cb3-16"><a></a>        <span class="cf">else</span>:</span>
-<span id="cb3-17"><a></a>            <span class="va">self</span>.add_flow(source, viz, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-18"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_replayer, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
-<span id="cb3-19"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_phasenet_replayer, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
-<span id="cb3-20"><a></a>            <span class="cf">for</span> op <span class="kw">in</span> [preprocessor_replayer, preprocessor_phasenet_replayer]:</span>
-<span id="cb3-21"><a></a>                <span class="va">self</span>.add_flow(op, multi_ai_inference_replayer, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-22"><a></a>            <span class="co">### connect infereceOp to postprocessors</span></span>
-<span id="cb3-23"><a></a>            <span class="va">self</span>.add_flow(</span>
-<span id="cb3-24"><a></a>                multi_ai_inference_replayer, multiheadOp, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor_postproOp"</span>)}</span>
-<span id="cb3-25"><a></a>            )</span>
-<span id="cb3-26"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_replayer, segpostprocessor, {(<span class="st">"transmitter"</span>, <span class="st">""</span>)})</span>
-<span id="cb3-27"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_replayer, phasenetOp, {(<span class="st">""</span>, <span class="st">"in"</span>)})</span>
-<span id="cb3-28"><a></a></span>
-<span id="cb3-29"><a></a>        <span class="co">## connect postprocessors outputs for visualisation with holoviz</span></span>
-<span id="cb3-30"><a></a>        <span class="va">self</span>.add_flow(multiheadOp, viz, {(<span class="st">"out_tensor_postproOp"</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-31"><a></a>        <span class="va">self</span>.add_flow(segpostprocessor, viz, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-32"><a></a>        <span class="va">self</span>.add_flow(phasenetOp, viz, {(<span class="st">"out"</span>, <span class="st">"receivers"</span>)})</span>
-<span id="cb3-33"><a></a>        <span class="va">self</span>.add_flow(phasenetOp, viz, {(<span class="st">"output_specs"</span>, <span class="st">"input_specs"</span>)})</span>
-<span id="cb3-34"><a></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-filename="multi-ai.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>        <span class="co"># Define the workflow</span></span>
+<span id="cb3-2"><a></a>        <span class="cf">if</span> is_v4l2:</span>
+<span id="cb3-3"><a></a>            <span class="va">self</span>.add_flow(source, viz, {(<span class="st">"signal"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-4"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_v4l2, {(<span class="st">"signal"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-5"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_phasenet_v4l2, {(<span class="st">"signal"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-6"><a></a>            <span class="cf">for</span> op <span class="kw">in</span> [preprocessor_v4l2, preprocessor_phasenet_v4l2]:</span>
+<span id="cb3-7"><a></a>                <span class="va">self</span>.add_flow(op, multi_ai_inference_v4l2, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-8"><a></a>            <span class="co">### connect infereceOp to postprocessors</span></span>
+<span id="cb3-9"><a></a>            <span class="va">self</span>.add_flow(</span>
+<span id="cb3-10"><a></a>                multi_ai_inference_v4l2, multiheadOp, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor_postproOp"</span>)}</span>
+<span id="cb3-11"><a></a>            )</span>
+<span id="cb3-12"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_v4l2, segpostprocessor, {(<span class="st">"transmitter"</span>, <span class="st">""</span>)})</span>
+<span id="cb3-13"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_v4l2, phasenetOp, {(<span class="st">""</span>, <span class="st">"in"</span>)})</span>
+<span id="cb3-14"><a></a></span>
+<span id="cb3-15"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb3-16"><a></a>            <span class="va">self</span>.add_flow(source, viz, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-17"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_replayer, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-18"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_phasenet_replayer, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-19"><a></a>            <span class="cf">for</span> op <span class="kw">in</span> [preprocessor_replayer, preprocessor_phasenet_replayer]:</span>
+<span id="cb3-20"><a></a>                <span class="va">self</span>.add_flow(op, multi_ai_inference_replayer, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-21"><a></a>            <span class="co">### connect infereceOp to postprocessors</span></span>
+<span id="cb3-22"><a></a>            <span class="va">self</span>.add_flow(</span>
+<span id="cb3-23"><a></a>                multi_ai_inference_replayer, multiheadOp, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor_postproOp"</span>)}</span>
+<span id="cb3-24"><a></a>            )</span>
+<span id="cb3-25"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_replayer, segpostprocessor, {(<span class="st">"transmitter"</span>, <span class="st">""</span>)})</span>
+<span id="cb3-26"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_replayer, phasenetOp, {(<span class="st">""</span>, <span class="st">"in"</span>)})</span>
+<span id="cb3-27"><a></a></span>
+<span id="cb3-28"><a></a>        <span class="co">## connect postprocessors outputs for visualisation with holoviz</span></span>
+<span id="cb3-29"><a></a>        <span class="va">self</span>.add_flow(multiheadOp, viz, {(<span class="st">"out_tensor_postproOp"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-30"><a></a>        <span class="va">self</span>.add_flow(segpostprocessor, viz, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-31"><a></a>        <span class="va">self</span>.add_flow(phasenetOp, viz, {(<span class="st">"out"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-32"><a></a>        <span class="va">self</span>.add_flow(phasenetOp, viz, {(<span class="st">"output_specs"</span>, <span class="st">"input_specs"</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -791,49 +789,51 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
 <div class="code-with-filename-file">
 <pre><strong>multi-ai.yaml</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="multi-ai.yaml"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>...</span>
-<span id="cb4-2"><a></a> multi_ai_inference_v4l2:</span>
-<span id="cb4-3"><a></a>  <span class="co">#</span></span>
-<span id="cb4-4"><a></a>  <span class="co">#</span></span>
-<span id="cb4-5"><a></a>  <span class="co"># Multi-AI Inference Operator InferenceOp()</span></span>
+<div class="sourceCode" id="cb4" data-filename="multi-ai.yaml"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a></span>
+<span id="cb4-2"><a></a>...</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a> multi_ai_inference_v4l2:</span>
+<span id="cb4-5"><a></a>  <span class="co">#</span></span>
 <span id="cb4-6"><a></a>  <span class="co">#</span></span>
-<span id="cb4-7"><a></a>  <span class="co">#</span></span>
-<span id="cb4-8"><a></a>  backend: <span class="st">"trt"</span></span>
-<span id="cb4-9"><a></a>  pre_processor_map:</span>
-<span id="cb4-10"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"prepro_v4l2"</span>]</span>
-<span id="cb4-11"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"prepro_PNv4l2"</span>]</span>
-<span id="cb4-12"><a></a>  inference_map:</span>
-<span id="cb4-13"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"segmentation_masks"</span>, <span class="st">"landmarks"</span>]</span>
-<span id="cb4-14"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"out"</span>]</span>
-<span id="cb4-15"><a></a>  enable_fp16: <span class="va">False</span></span>
-<span id="cb4-16"><a></a>  parallel_inference: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-17"><a></a>  infer_on_cpu: false <span class="co"># optional param, default to false</span></span>
-<span id="cb4-18"><a></a>  input_on_cuda: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-19"><a></a>  output_on_cuda: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-20"><a></a>  transmit_on_cuda: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-21"><a></a>  is_engine_path: false <span class="co"># optional param, default to false</span></span>
-<span id="cb4-22"><a></a></span>
-<span id="cb4-23"><a></a>multi_ai_inference_replayer:</span>
-<span id="cb4-24"><a></a>  <span class="co">#</span></span>
-<span id="cb4-25"><a></a>  <span class="co">#</span></span>
-<span id="cb4-26"><a></a>  <span class="co"># Multi-AI Inference Operator InferenceOp()</span></span>
+<span id="cb4-7"><a></a>  <span class="co"># Multi-AI Inference Operator InferenceOp()</span></span>
+<span id="cb4-8"><a></a>  <span class="co">#</span></span>
+<span id="cb4-9"><a></a>  <span class="co">#</span></span>
+<span id="cb4-10"><a></a>  backend: <span class="st">"trt"</span></span>
+<span id="cb4-11"><a></a>  pre_processor_map:</span>
+<span id="cb4-12"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"prepro_v4l2"</span>]</span>
+<span id="cb4-13"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"prepro_PNv4l2"</span>]</span>
+<span id="cb4-14"><a></a>  inference_map:</span>
+<span id="cb4-15"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"segmentation_masks"</span>, <span class="st">"landmarks"</span>]</span>
+<span id="cb4-16"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"out"</span>]</span>
+<span id="cb4-17"><a></a>  enable_fp16: <span class="va">False</span></span>
+<span id="cb4-18"><a></a>  parallel_inference: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-19"><a></a>  infer_on_cpu: false <span class="co"># optional param, default to false</span></span>
+<span id="cb4-20"><a></a>  input_on_cuda: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-21"><a></a>  output_on_cuda: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-22"><a></a>  transmit_on_cuda: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-23"><a></a>  is_engine_path: false <span class="co"># optional param, default to false</span></span>
+<span id="cb4-24"><a></a></span>
+<span id="cb4-25"><a></a>multi_ai_inference_replayer:</span>
+<span id="cb4-26"><a></a>  <span class="co">#</span></span>
 <span id="cb4-27"><a></a>  <span class="co">#</span></span>
-<span id="cb4-28"><a></a>  <span class="co">#</span></span>
-<span id="cb4-29"><a></a>  backend: <span class="st">"trt"</span></span>
-<span id="cb4-30"><a></a>  pre_processor_map:</span>
-<span id="cb4-31"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"prepro_replayer"</span>]</span>
-<span id="cb4-32"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"prepro_PNreplayer"</span>]</span>
-<span id="cb4-33"><a></a>  inference_map:</span>
-<span id="cb4-34"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"segmentation_masks"</span>, <span class="st">"landmarks"</span>]</span>
-<span id="cb4-35"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"out"</span>]</span>
-<span id="cb4-36"><a></a>  enable_fp16: <span class="va">False</span></span>
-<span id="cb4-37"><a></a>  parallel_inference: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-38"><a></a>  infer_on_cpu: false <span class="co"># optional param, default to false</span></span>
-<span id="cb4-39"><a></a>  input_on_cuda: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-40"><a></a>  output_on_cuda: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-41"><a></a>  transmit_on_cuda: true <span class="co"># optional param, default to true</span></span>
-<span id="cb4-42"><a></a>  is_engine_path: false <span class="co"># optional param, default to false</span></span>
-<span id="cb4-43"><a></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-28"><a></a>  <span class="co"># Multi-AI Inference Operator InferenceOp()</span></span>
+<span id="cb4-29"><a></a>  <span class="co">#</span></span>
+<span id="cb4-30"><a></a>  <span class="co">#</span></span>
+<span id="cb4-31"><a></a>  backend: <span class="st">"trt"</span></span>
+<span id="cb4-32"><a></a>  pre_processor_map:</span>
+<span id="cb4-33"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"prepro_replayer"</span>]</span>
+<span id="cb4-34"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"prepro_PNreplayer"</span>]</span>
+<span id="cb4-35"><a></a>  inference_map:</span>
+<span id="cb4-36"><a></a>    <span class="co">"pit_surg_model"</span>: [<span class="st">"segmentation_masks"</span>, <span class="st">"landmarks"</span>]</span>
+<span id="cb4-37"><a></a>    <span class="co">"phasenet_model"</span>: [<span class="st">"out"</span>]</span>
+<span id="cb4-38"><a></a>  enable_fp16: <span class="va">False</span></span>
+<span id="cb4-39"><a></a>  parallel_inference: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-40"><a></a>  infer_on_cpu: false <span class="co"># optional param, default to false</span></span>
+<span id="cb4-41"><a></a>  input_on_cuda: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-42"><a></a>  output_on_cuda: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-43"><a></a>  transmit_on_cuda: true <span class="co"># optional param, default to true</span></span>
+<span id="cb4-44"><a></a>  is_engine_path: false <span class="co"># optional param, default to false</span></span>
+<span id="cb4-45"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -852,27 +852,27 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
 <div class="sourceCode" id="cb5" data-filename="unit-test-example.py" data-code-line-numbers="|30-36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>:::</span>
 <span id="cb5-2"><a></a></span>
 <span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a></span>
+<span id="cb5-4"><a></a><span class="co">##  `real-time-ai-for-surgery`</span></span>
+<span id="cb5-5"><a></a><span class="co">### 🤝 Contributing</span></span>
+<span id="cb5-6"><a></a>::: {<span class="co">#fig-template}</span></span>
 <span id="cb5-7"><a></a></span>
-<span id="cb5-8"><a></a></span>
+<span id="cb5-8"><a></a><span class="op">!</span>[](figures<span class="op">/</span><span class="dv">00</span><span class="er">_template</span><span class="op">-</span>vector<span class="op">-</span>images<span class="op">/</span>drawing<span class="op">-</span>v00.svg){fig<span class="op">-</span>align<span class="op">=</span>center}</span>
 <span id="cb5-9"><a></a></span>
-<span id="cb5-10"><a></a></span>
-<span id="cb5-11"><a></a></span>
+<span id="cb5-10"><a></a>real<span class="op">-</span>time<span class="op">-</span>ai<span class="op">-</span><span class="cf">for</span><span class="op">-</span>surgery follows the Contributor Covenant Code of Conduct. Contributions, issues <span class="kw">and</span> feature requests are welcome. </span>
+<span id="cb5-11"><a></a>:::</span>
 <span id="cb5-12"><a></a></span>
-<span id="cb5-13"><a></a></span>
-<span id="cb5-14"><a></a></span>
-<span id="cb5-15"><a></a></span>
+<span id="cb5-13"><a></a>::: {.notes}</span>
+<span id="cb5-14"><a></a>Speaker notes go here.</span>
+<span id="cb5-15"><a></a>:::</span>
 <span id="cb5-16"><a></a></span>
 <span id="cb5-17"><a></a></span>
-<span id="cb5-18"><a></a><span class="co">##  `real-time-ai-for-surgery`</span></span>
-<span id="cb5-19"><a></a><span class="co">### 🤝 Contributing</span></span>
+<span id="cb5-18"><a></a></span>
+<span id="cb5-19"><a></a><span class="co">## Template for figures </span></span>
 <span id="cb5-20"><a></a>::: {<span class="co">#fig-template}</span></span>
 <span id="cb5-21"><a></a></span>
 <span id="cb5-22"><a></a><span class="op">!</span>[](figures<span class="op">/</span><span class="dv">00</span><span class="er">_template</span><span class="op">-</span>vector<span class="op">-</span>images<span class="op">/</span>drawing<span class="op">-</span>v00.svg){fig<span class="op">-</span>align<span class="op">=</span>center}</span>
 <span id="cb5-23"><a></a></span>
-<span id="cb5-24"><a></a>real<span class="op">-</span>time<span class="op">-</span>ai<span class="op">-</span><span class="cf">for</span><span class="op">-</span>surgery follows the Contributor Covenant Code of Conduct. Contributions, issues <span class="kw">and</span> feature requests are welcome. </span>
+<span id="cb5-24"><a></a>This text <span class="kw">is</span> part of the caption of this figure. Note that default size of presentation slides <span class="kw">is</span> <span class="dv">1200</span> x <span class="fl">700.</span></span>
 <span id="cb5-25"><a></a>:::</span>
 <span id="cb5-26"><a></a></span>
 <span id="cb5-27"><a></a>::: {.notes}</span>
@@ -881,98 +881,47 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
 <span id="cb5-30"><a></a></span>
 <span id="cb5-31"><a></a></span>
 <span id="cb5-32"><a></a></span>
-<span id="cb5-33"><a></a><span class="co">## {background-image="figures/oss4st-hsmr24.svg"}</span></span>
+<span id="cb5-33"><a></a></span>
 <span id="cb5-34"><a></a></span>
 <span id="cb5-35"><a></a></span>
-<span id="cb5-36"><a></a><span class="co">## 🙌 Acknowledgements</span></span>
+<span id="cb5-36"><a></a></span>
 <span id="cb5-37"><a></a></span>
-<span id="cb5-38"><a></a><span class="op">*</span> Mikael Brudfors <span class="kw">and</span> Nadim Daher</span>
-<span id="cb5-39"><a></a>  <span class="op">*</span> NVIDIA Healthcare AI</span>
+<span id="cb5-38"><a></a><span class="co">## Template for tabsets {.smaller}</span></span>
+<span id="cb5-39"><a></a>::: {.panel<span class="op">-</span>tabset}</span>
 <span id="cb5-40"><a></a></span>
-<span id="cb5-41"><a></a><span class="op">*</span> Stephen Thompson</span>
-<span id="cb5-42"><a></a>  <span class="op">*</span> Advanced Research Computing Centre (ARC)</span>
-<span id="cb5-43"><a></a></span>
-<span id="cb5-44"><a></a><span class="op">*</span> Zhehua Mao, Sophia Bano <span class="kw">and</span> Matt Clarkson</span>
-<span id="cb5-45"><a></a>  <span class="op">*</span> Wellcome <span class="op">/</span> EPSRC Centre <span class="cf">for</span> Interventional <span class="kw">and</span> Surgical Sciences (WEISS)</span>
+<span id="cb5-41"><a></a><span class="co">### Tab A</span></span>
+<span id="cb5-42"><a></a></span>
+<span id="cb5-43"><a></a>Content <span class="cf">for</span> `Tab A`</span>
+<span id="cb5-44"><a></a></span>
+<span id="cb5-45"><a></a><span class="co">### Tab B</span></span>
 <span id="cb5-46"><a></a></span>
-<span id="cb5-47"><a></a></span>
+<span id="cb5-47"><a></a>Content <span class="cf">for</span> `Tab B`</span>
 <span id="cb5-48"><a></a></span>
-<span id="cb5-49"><a></a></span>
+<span id="cb5-49"><a></a>:::</span>
 <span id="cb5-50"><a></a></span>
-<span id="cb5-51"><a></a></span>
-<span id="cb5-52"><a></a></span>
-<span id="cb5-53"><a></a><span class="co">## :video_camera: Embedding Yotube Video</span></span>
+<span id="cb5-51"><a></a>::: {.notes}</span>
+<span id="cb5-52"><a></a>Speaker notes go here.</span>
+<span id="cb5-53"><a></a>:::</span>
 <span id="cb5-54"><a></a></span>
 <span id="cb5-55"><a></a></span>
-<span id="cb5-56"><a></a>::: {.notes}</span>
-<span id="cb5-57"><a></a>Available aspect ratios include <span class="dv">1</span><span class="er">x1</span>, <span class="dv">4</span><span class="er">x3</span>, <span class="dv">16</span><span class="er">x9</span> (the default), <span class="kw">and</span> <span class="dv">21</span><span class="er">x9</span>.</span>
-<span id="cb5-58"><a></a></span>
-<span id="cb5-59"><a></a>Further details to render videos</span>
-<span id="cb5-60"><a></a>https:<span class="op">//</span>quarto.org<span class="op">/</span>docs<span class="op">/</span>authoring<span class="op">/</span>videos.html</span>
-<span id="cb5-61"><a></a>:::</span>
+<span id="cb5-56"><a></a></span>
+<span id="cb5-57"><a></a></span>
+<span id="cb5-58"><a></a><span class="co">## Template for tabsets with code-blocks {.smaller}{.scrollable}</span></span>
+<span id="cb5-59"><a></a>::: {.panel<span class="op">-</span>tabset}</span>
+<span id="cb5-60"><a></a></span>
+<span id="cb5-61"><a></a><span class="co">### Code-block A</span></span>
 <span id="cb5-62"><a></a></span>
-<span id="cb5-63"><a></a></span>
-<span id="cb5-64"><a></a></span>
-<span id="cb5-65"><a></a></span>
+<span id="cb5-63"><a></a>```{.python}</span>
+<span id="cb5-64"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-65"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-66"><a></a></span>
-<span id="cb5-67"><a></a></span>
-<span id="cb5-68"><a></a></span>
-<span id="cb5-69"><a></a></span>
-<span id="cb5-70"><a></a><span class="co">## Template for figures </span></span>
-<span id="cb5-71"><a></a>::: {<span class="co">#fig-template}</span></span>
-<span id="cb5-72"><a></a></span>
-<span id="cb5-73"><a></a><span class="op">!</span>[](figures<span class="op">/</span><span class="dv">00</span><span class="er">_template</span><span class="op">-</span>vector<span class="op">-</span>images<span class="op">/</span>drawing<span class="op">-</span>v00.svg){fig<span class="op">-</span>align<span class="op">=</span>center}</span>
-<span id="cb5-74"><a></a></span>
-<span id="cb5-75"><a></a>This text <span class="kw">is</span> part of the caption of this figure. Note that default size of presentation slides <span class="kw">is</span> <span class="dv">1200</span> x <span class="fl">700.</span></span>
-<span id="cb5-76"><a></a>:::</span>
-<span id="cb5-77"><a></a></span>
-<span id="cb5-78"><a></a>::: {.notes}</span>
-<span id="cb5-79"><a></a>Speaker notes go here.</span>
-<span id="cb5-80"><a></a>:::</span>
-<span id="cb5-81"><a></a></span>
-<span id="cb5-82"><a></a></span>
-<span id="cb5-83"><a></a></span>
-<span id="cb5-84"><a></a></span>
-<span id="cb5-85"><a></a></span>
-<span id="cb5-86"><a></a></span>
-<span id="cb5-87"><a></a></span>
-<span id="cb5-88"><a></a></span>
-<span id="cb5-89"><a></a><span class="co">## Template for tabsets {.smaller}</span></span>
-<span id="cb5-90"><a></a>::: {.panel<span class="op">-</span>tabset}</span>
-<span id="cb5-91"><a></a></span>
-<span id="cb5-92"><a></a><span class="co">### Tab A</span></span>
-<span id="cb5-93"><a></a></span>
-<span id="cb5-94"><a></a>Content <span class="cf">for</span> `Tab A`</span>
-<span id="cb5-95"><a></a></span>
-<span id="cb5-96"><a></a><span class="co">### Tab B</span></span>
-<span id="cb5-97"><a></a></span>
-<span id="cb5-98"><a></a>Content <span class="cf">for</span> `Tab B`</span>
-<span id="cb5-99"><a></a></span>
-<span id="cb5-100"><a></a>:::</span>
-<span id="cb5-101"><a></a></span>
-<span id="cb5-102"><a></a>::: {.notes}</span>
-<span id="cb5-103"><a></a>Speaker notes go here.</span>
-<span id="cb5-104"><a></a>:::</span>
-<span id="cb5-105"><a></a></span>
-<span id="cb5-106"><a></a></span>
-<span id="cb5-107"><a></a></span>
-<span id="cb5-108"><a></a></span>
-<span id="cb5-109"><a></a><span class="co">## Template for tabsets with code-blocks {.smaller}{.scrollable}</span></span>
-<span id="cb5-110"><a></a>::: {.panel<span class="op">-</span>tabset}</span>
-<span id="cb5-111"><a></a></span>
-<span id="cb5-112"><a></a><span class="co">### Code-block A</span></span>
-<span id="cb5-113"><a></a></span>
-<span id="cb5-114"><a></a>```{.python}</span>
-<span id="cb5-115"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-116"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-117"><a></a></span>
-<span id="cb5-118"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb5-119"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb5-120"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb5-121"><a></a>ax.plot(theta, r)</span>
-<span id="cb5-122"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb5-123"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb5-124"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-67"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb5-68"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb5-69"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb5-70"><a></a>ax.plot(theta, r)</span>
+<span id="cb5-71"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb5-72"><a></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-73"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="code-block-b">Code-block B</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1171,6 +1120,44 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="embedding-yotube-video" class="slide level2">
+<h2><span class="emoji" data-emoji="video_camera">📹</span> Embedding Yotube Video</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/hbf7Ai3jnxY?start=1269" width="85%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<aside class="notes">
+<p>Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.</p>
+<p>Further details to render videos https://quarto.org/docs/authoring/videos.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-1" class="slide level2" data-background-image="figures/oss4st-hsmr24.svg">
+<h2></h2>
+</section>
+<section id="acknowledgements" class="slide level2">
+<h2>🙌 Acknowledgements</h2>
+<ul>
+<li>Mikael Brudfors and Nadim Daher
+<ul>
+<li>NVIDIA Healthcare AI</li>
+</ul></li>
+<li>Steve Thompson
+<ul>
+<li>Advanced Research Computing Centre (ARC)</li>
+</ul></li>
+<li>Zhehua Mao, Sophia Bano and Matt Clarkson
+<ul>
+<li>Wellcome / EPSRC Centre for Interventional and Surgical Sciences (WEISS)</li>
+</ul></li>
+</ul>
 <!--
 adding HTML comment syntax to not render the following lines
 ## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}

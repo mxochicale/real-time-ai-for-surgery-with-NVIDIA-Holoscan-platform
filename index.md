@@ -314,7 +314,6 @@ Speaker notes go here.
 **multi-ai.py**
 
 ``` python
-...
         # Define the workflow
         if is_v4l2:
             self.add_flow(source, viz, {("signal", "receivers")})
@@ -347,7 +346,6 @@ Speaker notes go here.
         self.add_flow(segpostprocessor, viz, {("", "receivers")})
         self.add_flow(phasenetOp, viz, {("out", "receivers")})
         self.add_flow(phasenetOp, viz, {("output_specs", "input_specs")})
-...
 ```
 
 </div>
@@ -359,7 +357,9 @@ Speaker notes go here.
 **multi-ai.yaml**
 
 ``` python
+
 ...
+
  multi_ai_inference_v4l2:
   #
   #
@@ -401,7 +401,7 @@ multi_ai_inference_replayer:
   output_on_cuda: true # optional param, default to true
   transmit_on_cuda: true # optional param, default to true
   is_engine_path: false # optional param, default to false
-...
+
 ```
 
 </div>
@@ -423,20 +423,6 @@ data-fig-align="center" />
 :::
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ##  `real-time-ai-for-surgery`
 ### 🤝 Contributing
 ::: {#fig-template}
@@ -449,43 +435,6 @@ real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contr
 ::: {.notes}
 Speaker notes go here.
 :::
-
-
-
-## {background-image="figures/oss4st-hsmr24.svg"}
-
-
-## 🙌 Acknowledgements
-
-* Mikael Brudfors and Nadim Daher
-  * NVIDIA Healthcare AI
-
-* Stephen Thompson
-  * Advanced Research Computing Centre (ARC)
-
-* Zhehua Mao, Sophia Bano and Matt Clarkson
-  * Wellcome / EPSRC Centre for Interventional and Surgical Sciences (WEISS)
-
-
-
-
-
-
-
-## :video_camera: Embedding Yotube Video
-https://www.youtube.com/embed/hbf7Ai3jnxY
-
-::: {.notes}
-Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
-
-Further details to render videos
-https://quarto.org/docs/authoring/videos.html
-:::
-
-
-
-
-
 
 
 
@@ -731,6 +680,31 @@ Reference for the code!
 https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/
 
 </div>
+
+## :video_camera: Embedding Yotube Video
+
+<https://www.youtube.com/embed/hbf7Ai3jnxY>
+
+<div class="notes">
+
+Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
+
+Further details to render videos
+https://quarto.org/docs/authoring/videos.html
+
+</div>
+
+## 
+
+## 🙌 Acknowledgements
+
+- Mikael Brudfors and Nadim Daher
+  - NVIDIA Healthcare AI
+- Steve Thompson
+  - Advanced Research Computing Centre (ARC)
+- Zhehua Mao, Sophia Bano and Matt Clarkson
+  - Wellcome / EPSRC Centre for Interventional and Surgical Sciences
+    (WEISS)
 
 <!--
 adding HTML comment syntax to not render the following lines
