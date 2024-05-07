@@ -636,10 +636,7 @@ https://quarto.org/docs/authoring/videos.html
 :::
 
 
-
-
-
-
+## {background-image="figures/oss4st-hsmr24.png"}
 
 
 <!--
