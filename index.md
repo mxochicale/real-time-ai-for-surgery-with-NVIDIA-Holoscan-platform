@@ -142,7 +142,7 @@ Holoscan platform
 
 <div class="panel-tabset">
 
-### Operators and workflow
+### Workflow
 
 <img src="figures/byom.svg" data-fig-align="center" />
 
