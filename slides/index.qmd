@@ -307,8 +307,8 @@ Speaker notes go here.
 
 
 
-### {{< fa brands github >}} `real-time-ai-for-surgery`
-#### Getting started docs
+## {{< fa brands github >}} `real-time-ai-for-surgery`
+### Getting started docs
 ::: {#fig-template}
 
 ![](figures/getting-started.svg){fig-align=center}
@@ -322,8 +322,8 @@ Speaker notes go here.
 
 
 
-### {{< fa brands github >}} `real-time-ai-for-surgery`
-#### 🏥 Endoscopic pituitary surgery
+## {{< fa brands github >}} `real-time-ai-for-surgery`
+### 🏥 Endoscopic pituitary surgery
 ::: {.panel-tabset}
 
 
@@ -344,8 +344,8 @@ Speaker notes go here.
 
 
 
-### {{< fa brands github >}} `real-time-ai-for-surgery`
-#### 🏥 Endoscopic pituitary surgery
+## {{< fa brands github >}} `real-time-ai-for-surgery`
+### 🏥 Endoscopic pituitary surgery
 ::: {.panel-tabset}
 
 ### 🔱 Multi AI models
@@ -359,8 +359,8 @@ Speaker notes go here.
 :::
 
 
-### {{< fa brands github >}} `real-time-ai-for-surgery`
-#### 🤝 Contributing
+## {{< fa brands github >}} `real-time-ai-for-surgery`
+### 🤝 Contributing
 ::: {#fig-template}
 
 ![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
