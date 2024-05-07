@@ -457,6 +457,7 @@ Speaker notes go here.
 
 
 
+<!--
 ## Template for tabsets {.smaller}
 ::: {.panel-tabset}
 
@@ -474,9 +475,11 @@ Content for `Tab B`
 Speaker notes go here.
 :::
 
+-->
 
 
 
+<!--
 ## Template for tabsets with code-blocks {.smaller}{.scrollable}
 ::: {.panel-tabset}
 
@@ -520,42 +523,33 @@ Speaker notes go here.
 
 </div>
 
+–\>
+
+<!--
 ## Multiple columns
-
-<div class="columns">
-
-<div class="column" width="50%">
-
+:::: {.columns}
+&#10;::: {.column width="50%"}
 Left column
-
-</div>
-
-<div class="column" width="50%">
-
+&#10;
+:::
+&#10;::: {.column width="50%"}
 Right column
-
-</div>
-
-</div>
-
-<div class="notes">
-
+&#10;
+:::
+&#10;::::
+&#10;::: {.notes}
 Speaker notes go here.
-
-</div>
-
-## Multiple columns with code-blocks
-
-<div class="columns">
-
-<div class="column" width="50%">
-
-``` python
+:::
+-->
+<!--
+## Multiple columns with code-blocks {.smaller}
+:::: {.columns}
+&#10;::: {.column width="50%"}
+```{.python}
 #Left column
 import numpy as np
 import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
+&#10;r = np.arange(0, 2, 0.01)
 theta = 2 * np.pi * r
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 ax.plot(theta, r)
@@ -563,17 +557,13 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
-
-</div>
-
-<div class="column" width="50%">
-
-``` python
+:::
+&#10;::: {.column width="50%"}
+```{.python}
 #Right column
 import numpy as np
 import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
+&#10;r = np.arange(0, 2, 0.01)
 theta = 2 * np.pi * r
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 ax.plot(theta, r)
@@ -581,28 +571,18 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
-
-</div>
-
-</div>
-
-<div class="notes">
-
+:::
+&#10;::::
+&#10;::: {.notes}
 Speaker notes go here.
-
-</div>
-
+:::
+-->
+<!--
 ## :construction: Line Highlighting (10 lines)
-
-<div class="code-with-filename">
-
-**matplotlib.py**
-
-``` python
+&#10;```{.python filename="matplotlib.py" code-line-numbers="|6-9"}
 import numpy as np
 import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
+&#10;r = np.arange(0, 2, 0.01)
 theta = 2 * np.pi * r
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 ax.plot(theta, r)
@@ -610,89 +590,63 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
-
-</div>
-
-<div class="notes">
-
+&#10;::: {.notes}
 Speaker notes go here.
-
-</div>
-
+:::
+-->
+<!--
 ## :construction: Line Highlighting (N lines)
-
-<div class="code-with-filename">
-
-**unit-test-example.py**
-
-``` python
+```{.python filename="unit-test-example.py" code-line-numbers="|30-36"}
 import datetime
 import unittest
-
-import pandas as pd
+&#10;import pandas as pd
 import pandas_datareader.data as web
-
-def get_stock_data(ticker):
+&#10;def get_stock_data(ticker):
     """pull data from stooq"""
     df = web.DataReader(ticker, 'yahoo')
     return df
-
-class TestGetStockData(unittest.TestCase):
+&#10;class TestGetStockData(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         """We only want to pull this data once for each TestCase since it is an expensive operation"""
         self.df = get_stock_data('^DJI')
-
-    def test_columns_present(self):
+&#10;    def test_columns_present(self):
         """ensures that the expected columns are all present"""
         self.assertIn("Open", self.df.columns)
         self.assertIn("High", self.df.columns)
         self.assertIn("Low", self.df.columns)
         self.assertIn("Close", self.df.columns)
         self.assertIn("Volume", self.df.columns)
-
-    def test_non_empty(self):
+&#10;    def test_non_empty(self):
         """ensures that there is more than one row of data"""
         self.assertNotEqual(len(self.df.index), 0)
-
-    def test_high_low(self):
+&#10;    def test_high_low(self):
         """ensure high and low are the highest and lowest in the same row"""
         ohlc = self.df[["Open","High","Low","Close"]]
         highest = ohlc.max(axis=1)
         lowest = ohlc.min(axis=1)
         self.assertTrue(ohlc.le(highest, axis=0).all(axis=None))
         self.assertTrue(ohlc.ge(lowest, axis=0).all(axis=None))
-
-    def test_most_recent_within_week(self):
+&#10;    def test_most_recent_within_week(self):
         """most recent data was collected within the last week"""
         most_recent_date = pd.to_datetime(self.df.index[-1])
         self.assertLessEqual((datetime.datetime.today() - most_recent_date).days, 7)
-
-unittest.main()
+&#10;unittest.main()
 ```
-
-</div>
-
-<div class="notes">
-
+&#10;::: {.notes}
 Reference for the code!
-
-https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/
-
-</div>
-
+&#10;https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/
+:::
+-->
+<!--
 ## :video_camera: Embedding Yotube Video
-
-<https://www.youtube.com/embed/hbf7Ai3jnxY>
-
-<div class="notes">
-
+https://www.youtube.com/embed/hbf7Ai3jnxY
+&#10;::: {.notes}
 Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
-
-Further details to render videos
+&#10;Further details to render videos
 https://quarto.org/docs/authoring/videos.html
-
-</div>
+:::
+-->
 
 ## 
 
