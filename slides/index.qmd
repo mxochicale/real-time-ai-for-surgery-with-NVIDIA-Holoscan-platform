@@ -68,7 +68,7 @@ Content
 
 
 ## My background
-::: {#fig-mb}
+:::
 
 ![](figures/mybackground.svg)
 
@@ -159,6 +159,10 @@ Clara-AGX
 
 [{{< fa brands github >}} `Clara-AGX DevKit`](
 https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md
+)
+
+[{{< fa brands github >}} `Orin-IGX DevKit`](
+https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/nvidia-igx-orin/nvidia_igx_orin_user_guide.md
 )
 
 
