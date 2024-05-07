@@ -176,7 +176,7 @@ Holoscan platform
 
 
 
-## Bring Your Own Model (BYOM) {.scrollable}
+## Bring Your Own Model (BYOM) 
 ::: {.panel-tabset}
 
 
