@@ -53,7 +53,7 @@ Content
 
 ## My background
 
-![](figures/mybackground.svg)
+<img src="figures/mybackground.svg" data-fig-align="center" />
 
 <div class="notes">
 
