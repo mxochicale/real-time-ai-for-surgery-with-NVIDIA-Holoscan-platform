@@ -111,13 +111,20 @@ Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, Joh
 ## Real-time AI Applications for Surgery
 ::: {#fig-template}
 
-![](figures/rtai4spipeline.png)
+![](figures/rtai4spipeline.png){fig-align=center}
 
 Pipeline with development and deployment of real-time AI apps for surgery
 :::
 
 ::: {.notes}
 Pipeline with development and deployment of real-time AI apps for surgery
+
+
+{fig-pos='b'}
+b(bottom)
+h(here)
+p(page)
+t(top)
 :::
 
 
@@ -134,25 +141,24 @@ Holoscan-SDK
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
 
-[[{{< fa brands github >}} `holoscan-sdk`](
+[{{< fa brands github >}} `holoscan-sdk`](
 https://github.com/nvidia-holoscan/holoscan-sdk/tree/main
-)]
+)
 
-[[{{< fa brands github >}} `holohub`](
+[{{< fa brands github >}} `holohub`](
 https://github.com/nvidia-holoscan/holohub
-)]
+)
 
 :::
 
 ::: {.column width="50%"}
 Clara-AGX
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/holoscan-platform/clara_agx_dev_kit_components.svg)
 
-
-[[{{< fa brands github >}} `Clara-AGX DevKit`](
+[{{< fa brands github >}} `Clara-AGX DevKit`](
 https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md
-)]
+)
 
 
 
