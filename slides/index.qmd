@@ -468,7 +468,7 @@ Speaker notes go here.
 
 
 
-## {{< fa brands github >}} `real-time-ai-for-surgery`
+## {{< fa brands github >}} `real-time-ai-for-surgery` {.scrollable}
 ### Release version summaries
 ::: {.panel-tabset}
 
@@ -487,12 +487,11 @@ Speaker notes go here.
 ### v0.5.0
 ![](figures/rtai4s-v0.5.0.svg){fig-align=center}
 
-
-
 :::
 
 ::: {.notes}
 Speaker notes go here.
+{.scrollable}
 :::
 
 
@@ -501,9 +500,9 @@ Speaker notes go here.
 ## {{< fa brands github >}} `real-time-ai-for-surgery`
 ### Future work
 
-* Multi-sensor real-time AI
-  * Enterprise secondments funding (Results end of May2024)
-* Contributions to holoscan applications
+* Multi-sensor data for real-time AI
+  * Enterprise secondments funding (Results by the end of May 2024)
+* Contributions to NVIDIA-Holoscan applications
 * Real-time AI video-based eye movement assessment 
 
 ::: {.notes}
