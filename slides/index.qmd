@@ -111,13 +111,13 @@ Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, Joh
 ## Real-time AI Applications for Surgery
 ::: {#fig-template}
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/rtai4spipeline.png)
 
-This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
+Pipeline with development and deployment of real-time AI apps for surgery
 :::
 
 ::: {.notes}
-Speaker notes go here.
+Pipeline with development and deployment of real-time AI apps for surgery
 :::
 
 
@@ -132,11 +132,28 @@ Speaker notes go here.
 ::: {.column width="50%"}
 Holoscan-SDK
 
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+[[{{< fa brands github >}} `holoscan-sdk`](
+https://github.com/nvidia-holoscan/holoscan-sdk/tree/main
+)]
+
+[[{{< fa brands github >}} `holohub`](
+https://github.com/nvidia-holoscan/holohub
+)]
 
 :::
 
 ::: {.column width="50%"}
 Clara-AGX
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+
+[[{{< fa brands github >}} `Clara-AGX DevKit`](
+https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md
+)]
+
 
 
 :::
@@ -144,7 +161,7 @@ Clara-AGX
 ::::
 
 ::: {.notes}
-Speaker notes go here.
+Holoscan platform
 :::
 
 
