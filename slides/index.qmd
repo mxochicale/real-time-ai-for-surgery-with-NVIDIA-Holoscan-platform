@@ -176,14 +176,12 @@ Holoscan platform
 
 
 
-
-
-## Bring Your Own Model (BYOM)
+## Bring Your Own Model (BYOM) {.smaller}
 ::: {.panel-tabset}
 
 
 
-### Operators and workflow
+### Workflow
 
 ![](figures/byom.svg){fig-align=center}
 
