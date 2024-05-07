@@ -90,6 +90,7 @@ My background
     width="85%" 
     height="85%"
 >}}
+{fig-align=center}
 
 ::: {.notes}
 94,961 views  20 Nov 2012
@@ -139,7 +140,7 @@ t(top)
 ::: {.column width="50%"}
 Holoscan-SDK
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/holoscan-platform/holohub.svg)
 
 [{{< fa brands github >}} `holoscan-sdk`](
 https://github.com/nvidia-holoscan/holoscan-sdk/tree/main
