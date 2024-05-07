@@ -53,7 +53,7 @@ Content
 
 ## My background
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/mybackground.svg)
 
 <div class="notes">
 
