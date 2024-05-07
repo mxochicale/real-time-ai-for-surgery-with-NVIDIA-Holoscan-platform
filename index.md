@@ -438,6 +438,33 @@ Speaker notes go here.
 
 ##  `real-time-ai-for-surgery`
 
+### GitHub templates
+
+<div class="panel-tabset">
+
+### 🎒 new users
+
+<img src="figures/gh_templates_new_users.svg" data-fig-align="center" />
+
+### 🔩 new models
+
+<img src="figures/gh_templates_new_models.svg"
+data-fig-align="center" />
+
+### :recycle: PRs
+
+<img src="figures/gh_templates_PRs.svg" data-fig-align="center" />
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here. {.scrollable}
+
+</div>
+
+##  `real-time-ai-for-surgery`
+
 ### Release version summaries
 
 <div class="panel-tabset">
