@@ -63,7 +63,7 @@ My background
 
 ## :medical_symbol: Endoscopic Pituitary Surgery
 
-<https://www.youtube.com/embed/EwlRdxokdGk> {fig-align=center}
+<https://www.youtube.com/embed/EwlRdxokdGk>
 
 <div class="notes">
 
@@ -88,14 +88,14 @@ Surgery (2024): 1-8.
 
 ## Real-time AI Applications for Surgery
 
-<img src="figures/rtai4spipeline.png" data-fig-align="center" />
+![](figures/rtai4spipeline.svg)
 
 <div class="notes">
 
 Pipeline with development and deployment of real-time AI apps for
 surgery
 
-{fig-pos=‘b’} b(bottom) h(here) p(page) t(top)
+{fig-align=center} {fig-pos=‘b’} b(bottom) h(here) p(page) t(top)
 
 </div>
 
