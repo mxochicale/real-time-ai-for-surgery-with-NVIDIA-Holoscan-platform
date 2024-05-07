@@ -185,7 +185,7 @@ Holoscan platform
 
 ### Operators and workflow
 
-![](figures/byom.svg)
+![](figures/byom.svg){fig-align=center}
 
 ### Python
 
@@ -313,7 +313,7 @@ Speaker notes go here.
 ## Getting started tutorial
 ::: {#fig-template}
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
 This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
 :::
@@ -327,16 +327,15 @@ Speaker notes go here.
 
 ### 👃 Multi-head Model
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
 ### 🌓 PhaseNet Model
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
 ## 🔱 Multi AI models
 
-![](figures/00_template-vector-images/drawing-v00.svg)
-
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
 
 
