@@ -439,6 +439,40 @@ Speaker notes go here.
 
 ##  `real-time-ai-for-surgery`
 
+### Release version summaries
+
+<div class="panel-tabset">
+
+### v0.1.0
+
+<img src="figures/rtai4s-v0.1.0.svg" data-fig-align="center" />
+
+### v0.2.0
+
+<img src="figures/rtai4s-v0.2.0.svg" data-fig-align="center" />
+
+### v0.3.0
+
+<img src="figures/rtai4s-v0.3.0.svg" data-fig-align="center" />
+
+### v0.4.0
+
+<img src="figures/rtai4s-v0.4.0.svg" data-fig-align="center" />
+
+### v0.5.0
+
+<img src="figures/rtai4s-v0.5.0.svg" data-fig-align="center" />
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
+##  `real-time-ai-for-surgery`
+
 ### Future work
 
 - Multi-sensor real-time AI
@@ -462,6 +496,8 @@ data-fig-align="center" />
 Speaker notes go here.
 
 </div>
+
+## 
 
 ## 
 
