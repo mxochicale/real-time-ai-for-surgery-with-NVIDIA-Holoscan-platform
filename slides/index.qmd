@@ -131,7 +131,7 @@ t(top)
 
 
 
-## Holoscan platform
+## NVIDIA Holoscan platform
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -306,7 +306,9 @@ Speaker notes go here.
 
 
 
-## Getting started docs
+
+## {{< fa brands github >}} `real-time-ai-for-surgery`
+### Getting started docs
 ::: {#fig-template}
 
 ![](figures/getting-started.svg){fig-align=center}
