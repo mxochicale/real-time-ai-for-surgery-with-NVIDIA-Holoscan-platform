@@ -11,7 +11,7 @@
     "href": "index.html#my-background",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "My background",
-    "text": "My background\n\n\nFigure 1\n\nMy background"
+    "text": "My background\n:::\n\n:::\n\nMy background"
   },
   {
     "objectID": "index.html#endoscopic-pituitary-surgery",
@@ -25,14 +25,14 @@
     "href": "index.html#real-time-ai-applications-for-surgery",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Real-time AI Applications for Surgery",
-    "text": "Real-time AI Applications for Surgery\n\n\nFigure 2: Pipeline with development and deployment of real-time AI apps for surgery\n\nPipeline with development and deployment of real-time AI apps for surgery\n{fig-align=center} {fig-pos=‘b’} b(bottom) h(here) p(page) t(top)"
+    "text": "Real-time AI Applications for Surgery\n\n\nFigure 1: Pipeline with development and deployment of real-time AI apps for surgery\n\nPipeline with development and deployment of real-time AI apps for surgery\n{fig-align=center} {fig-pos=‘b’} b(bottom) h(here) p(page) t(top)"
   },
   {
     "objectID": "index.html#holoscan-platform",
     "href": "index.html#holoscan-platform",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Holoscan platform",
-    "text": "Holoscan platform\n\n\nHoloscan-SDK\n\n holoscan-sdk\n holohub\n\nClara-AGX\n\n Clara-AGX DevKit\n\n\n\nHoloscan platform"
+    "text": "Holoscan platform\n\n\nHoloscan-SDK\n\n holoscan-sdk\n holohub\n\nClara-AGX\n\n Clara-AGX DevKit\n Orin-IGX DevKit\n\n\n\nHoloscan platform"
   },
   {
     "objectID": "index.html#end-to-end-python-based-applications",
@@ -46,7 +46,7 @@
     "href": "index.html#template-for-figures",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Template for figures",
-    "text": "Template for figures\n\n\nFigure 3: This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.\n\nSpeaker notes go here."
+    "text": "Template for figures\n\n\nFigure 2: This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#template-for-tabsets",

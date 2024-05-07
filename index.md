@@ -53,7 +53,11 @@ Content
 
 ## My background
 
+:::
+
 ![](figures/mybackground.svg)
+
+:::
 
 <div class="notes">
 
@@ -124,6 +128,9 @@ Clara-AGX
 
 [
 `Clara-AGX DevKit`](https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md)
+
+[
+`Orin-IGX DevKit`](https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/nvidia-igx-orin/nvidia_igx_orin_user_guide.md)
 
 </div>
 
