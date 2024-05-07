@@ -267,6 +267,40 @@ Speaker notes go here.
 
 </div>
 
+## Getting started tutorial
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
+## 🏥 Endoscopic pituitary surgery
+
+<div class="panel-tabset">
+
+### 👃 Multi-head Model
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+### 🌓 PhaseNet Model
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+## 🔱 Multi AI models
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
 ## Template for figures
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
