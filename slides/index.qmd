@@ -176,6 +176,24 @@ Holoscan platform
 
 
 
+## Holoscan Core Concepts
+::: {#fig-template}
+
+![](figures/holoscan_core_concepts.svg){fig-align=center}
+
+Operator: An operator is the most basic unit of work in this framework.
+:::
+
+::: {.notes}
+
+https://docs.nvidia.com/holoscan/sdk-user-guide/holoscan_operators_extensions.html
+:::
+
+
+
+
+
+
 ## Bring Your Own Model (BYOM) {.scrollable}
 ::: {.panel-tabset}
 
@@ -532,22 +550,6 @@ Speaker notes go here.
 ::: {.notes}
 Speaker notes go here.
 :::
-
-
-
-
-## Template for figures 
-::: {#fig-template}
-
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
-
-This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
 
 
 
