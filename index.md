@@ -428,8 +428,7 @@ filename=“unit-test-example.py” code-line-numbers=“\|30-36”}
 
 ### 🤝 Contributing
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+<img src="figures/contributing.svg" data-fig-align="center" />
 
 <div class="notes">
 
