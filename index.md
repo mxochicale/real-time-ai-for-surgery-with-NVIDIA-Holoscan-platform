@@ -314,6 +314,9 @@ Speaker notes go here.
 **multi-ai.py**
 
 ``` python
+
+...
+
         # Define the workflow
         if is_v4l2:
             self.add_flow(source, viz, {("signal", "receivers")})
@@ -346,6 +349,8 @@ Speaker notes go here.
         self.add_flow(segpostprocessor, viz, {("", "receivers")})
         self.add_flow(phasenetOp, viz, {("out", "receivers")})
         self.add_flow(phasenetOp, viz, {("output_specs", "input_specs")})
+
+...
 ```
 
 </div>
@@ -402,6 +407,7 @@ multi_ai_inference_replayer:
   transmit_on_cuda: true # optional param, default to true
   is_engine_path: false # optional param, default to false
 
+...
 ```
 
 </div>
