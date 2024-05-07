@@ -437,6 +437,21 @@ Speaker notes go here.
 
 </div>
 
+##  `real-time-ai-for-surgery`
+
+### Future work
+
+- Multi-sensor real-time AI
+  - Enterprise secondments funding (Results end of May2024)
+- Contributions to holoscan applications
+- Real-time AI video-based eye movement assessment
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
 ## Template for figures
 
 <img src="figures/00_template-vector-images/drawing-v00.svg"
