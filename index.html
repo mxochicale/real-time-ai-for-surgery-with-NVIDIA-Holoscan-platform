@@ -503,7 +503,7 @@
 <h2>Real-time AI Applications for Surgery</h2>
 
 <img data-src="figures/rtai4spipeline.svg" class="r-stretch quarto-figure-center"><p class="caption">
-Figure&nbsp;1: Pipeline with development and deployment of real-time AI apps for surgery
+Figure&nbsp;1: Development and deployment pipeline for real-time AI apps for surgery
 </p><aside class="notes">
 <p>Pipeline with development and deployment of real-time AI apps for surgery</p>
 <p>{fig-align=center} {fig-pos=‘b’} b(bottom) h(here) p(page) t(top)</p>
@@ -548,34 +548,120 @@ Figure&nbsp;1: Pipeline with development and deployment of real-time AI apps for
           display:block!important;
       }</style></aside>
 </section>
-<section id="end-to-end-python-based-applications" class="slide level2 smaller">
-<h2>End-to-end python-based applications</h2>
+<section id="bring-your-own-model-byom" class="slide level2">
+<h2>Bring Your Own Model (BYOM)</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code-block A</a></li><li><a href="#tabset-1-2">Code-block B</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Operators and workflow</a></li><li><a href="#tabset-1-2">Python</a></li><li><a href="#tabset-1-3">YAML</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb1-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb1-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb1-7"><a></a>ax.plot(theta, r)</span>
-<span id="cb1-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb1-9"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb1-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="figures/byom.svg"></p>
 </div>
 <div id="tabset-1-2">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb2-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb2-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb2-7"><a></a>ax.plot(theta, r)</span>
-<span id="cb2-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb2-9"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb2-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a></a><span class="im">from</span> argparse <span class="im">import</span> ArgumentParser</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="im">from</span> holoscan.core <span class="im">import</span> Application</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="im">from</span> holoscan.operators <span class="im">import</span> (</span>
+<span id="cb1-7"><a></a>    FormatConverterOp,</span>
+<span id="cb1-8"><a></a>    HolovizOp,</span>
+<span id="cb1-9"><a></a>    InferenceOp,</span>
+<span id="cb1-10"><a></a>    SegmentationPostprocessorOp,</span>
+<span id="cb1-11"><a></a>    VideoStreamReplayerOp,</span>
+<span id="cb1-12"><a></a>)</span>
+<span id="cb1-13"><a></a><span class="im">from</span> holoscan.resources <span class="im">import</span> UnboundedAllocator</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a></span>
+<span id="cb1-16"><a></a><span class="kw">class</span> BYOMApp(Application):</span>
+<span id="cb1-17"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, data):</span>
+<span id="cb1-18"><a></a>        <span class="co">"""Initialize the application</span></span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a><span class="co">Parameters</span></span>
+<span id="cb1-21"><a></a><span class="co">----------</span></span>
+<span id="cb1-22"><a></a><span class="co">data : Location to the data</span></span>
+<span id="cb1-23"><a></a><span class="co">"""</span></span>
+<span id="cb1-24"><a></a></span>
+<span id="cb1-25"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb1-26"><a></a></span>
+<span id="cb1-27"><a></a>        <span class="co"># set name</span></span>
+<span id="cb1-28"><a></a>        <span class="va">self</span>.name <span class="op">=</span> <span class="st">"BYOM App"</span></span>
+<span id="cb1-29"><a></a></span>
+<span id="cb1-30"><a></a>        <span class="cf">if</span> data <span class="op">==</span> <span class="st">"none"</span>:</span>
+<span id="cb1-31"><a></a>            data <span class="op">=</span> os.environ.get(<span class="st">"HOLOSCAN_INPUT_PATH"</span>, <span class="st">"../data"</span>)</span>
+<span id="cb1-32"><a></a></span>
+<span id="cb1-33"><a></a>        <span class="va">self</span>.sample_data_path <span class="op">=</span> data</span>
+<span id="cb1-34"><a></a></span>
+<span id="cb1-35"><a></a>        <span class="va">self</span>.model_path <span class="op">=</span> os.path.join(os.path.dirname(<span class="va">__file__</span>), <span class="st">"../model"</span>)</span>
+<span id="cb1-36"><a></a>        <span class="va">self</span>.model_path_map <span class="op">=</span> {</span>
+<span id="cb1-37"><a></a>            <span class="st">"byom_model"</span>: os.path.join(<span class="va">self</span>.model_path, <span class="st">"identity_model.onnx"</span>),</span>
+<span id="cb1-38"><a></a>        }</span>
+<span id="cb1-39"><a></a></span>
+<span id="cb1-40"><a></a>        <span class="va">self</span>.video_dir <span class="op">=</span> os.path.join(<span class="va">self</span>.sample_data_path, <span class="st">"racerx"</span>)</span>
+<span id="cb1-41"><a></a>        <span class="cf">if</span> <span class="kw">not</span> os.path.exists(<span class="va">self</span>.video_dir):</span>
+<span id="cb1-42"><a></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"Could not find video data:</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>video_dir<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-43"><a></a></span>
+<span id="cb1-44"><a></a><span class="co"># Define the workflow</span></span>
+<span id="cb1-45"><a></a>        <span class="va">self</span>.add_flow(source, viz, {(<span class="st">"output"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb1-46"><a></a>        <span class="va">self</span>.add_flow(source, preprocessor, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb1-47"><a></a>        <span class="va">self</span>.add_flow(preprocessor, inference, {(<span class="st">"tensor"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb1-48"><a></a>        <span class="va">self</span>.add_flow(inference, postprocessor, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor"</span>)})</span>
+<span id="cb1-49"><a></a>        <span class="va">self</span>.add_flow(postprocessor, viz, {(<span class="st">"out_tensor"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb1-50"><a></a></span>
+<span id="cb1-51"><a></a></span>
+<span id="cb1-52"><a></a><span class="kw">def</span> main(config_file, data):</span>
+<span id="cb1-53"><a></a>    app <span class="op">=</span> BYOMApp(data<span class="op">=</span>data)</span>
+<span id="cb1-54"><a></a>    <span class="co"># if the --config command line argument was provided, it will override this config_file</span></span>
+<span id="cb1-55"><a></a>    app.config(config_file)</span>
+<span id="cb1-56"><a></a>    app.run()</span>
+<span id="cb1-57"><a></a></span>
+<span id="cb1-58"><a></a></span>
+<span id="cb1-59"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-60"><a></a>    <span class="co"># Parse args</span></span>
+<span id="cb1-61"><a></a>    parser <span class="op">=</span> ArgumentParser(description<span class="op">=</span><span class="st">"BYOM demo application."</span>)</span>
+<span id="cb1-62"><a></a>    parser.add_argument(</span>
+<span id="cb1-63"><a></a>        <span class="st">"-d"</span>,</span>
+<span id="cb1-64"><a></a>        <span class="st">"--data"</span>,</span>
+<span id="cb1-65"><a></a>        default<span class="op">=</span><span class="st">"none"</span>,</span>
+<span id="cb1-66"><a></a>        <span class="bu">help</span><span class="op">=</span>(<span class="st">"Set the data path"</span>),</span>
+<span id="cb1-67"><a></a>    )</span>
+<span id="cb1-68"><a></a></span>
+<span id="cb1-69"><a></a>    args <span class="op">=</span> parser.parse_args()</span>
+<span id="cb1-70"><a></a>    config_file <span class="op">=</span> os.path.join(os.path.dirname(<span class="va">__file__</span>), <span class="st">"byom.yaml"</span>)</span>
+<span id="cb1-71"><a></a>    main(config_file<span class="op">=</span>config_file, data<span class="op">=</span>args.data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="op">%</span>YAML <span class="fl">1.2</span></span>
+<span id="cb2-2"><a></a>replayer:  <span class="co"># VideoStreamReplayer</span></span>
+<span id="cb2-3"><a></a>  basename: <span class="st">"racerx"</span></span>
+<span id="cb2-4"><a></a>  frame_rate: <span class="dv">0</span> <span class="co"># as specified in timestamps</span></span>
+<span id="cb2-5"><a></a>  repeat: true <span class="co"># default: false</span></span>
+<span id="cb2-6"><a></a>  realtime: true <span class="co"># default: true</span></span>
+<span id="cb2-7"><a></a>  count: <span class="dv">0</span> <span class="co"># default: 0 (no frame count restriction)</span></span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a>preprocessor:  <span class="co"># FormatConverter</span></span>
+<span id="cb2-10"><a></a>  out_tensor_name: source_video</span>
+<span id="cb2-11"><a></a>  out_dtype: <span class="st">"float32"</span></span>
+<span id="cb2-12"><a></a>  resize_width: <span class="dv">512</span></span>
+<span id="cb2-13"><a></a>  resize_height: <span class="dv">512</span></span>
+<span id="cb2-14"><a></a></span>
+<span id="cb2-15"><a></a>inference:  <span class="co"># Inference</span></span>
+<span id="cb2-16"><a></a>  backend: <span class="st">"trt"</span></span>
+<span id="cb2-17"><a></a>  pre_processor_map:</span>
+<span id="cb2-18"><a></a>    <span class="co">"byom_model"</span>: [<span class="st">"source_video"</span>]</span>
+<span id="cb2-19"><a></a>  inference_map:</span>
+<span id="cb2-20"><a></a>    <span class="co">"byom_model"</span>: [<span class="st">"output"</span>]</span>
+<span id="cb2-21"><a></a></span>
+<span id="cb2-22"><a></a>postprocessor:  <span class="co"># SegmentationPostprocessor</span></span>
+<span id="cb2-23"><a></a>  in_tensor_name: output</span>
+<span id="cb2-24"><a></a>  <span class="co"># network_output_type: None</span></span>
+<span id="cb2-25"><a></a>  data_format: nchw</span>
+<span id="cb2-26"><a></a></span>
+<span id="cb2-27"><a></a>viz:  <span class="co"># Holoviz</span></span>
+<span id="cb2-28"><a></a>  width: <span class="dv">854</span></span>
+<span id="cb2-29"><a></a>  height: <span class="dv">480</span></span>
+<span id="cb2-30"><a></a>  color_lut: [</span>
+<span id="cb2-31"><a></a>    [<span class="fl">0.65</span>, <span class="fl">0.81</span>, <span class="fl">0.89</span>, <span class="fl">0.1</span>],</span>
+<span id="cb2-32"><a></a>    ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
