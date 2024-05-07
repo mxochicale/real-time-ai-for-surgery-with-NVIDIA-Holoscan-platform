@@ -467,6 +467,30 @@ Speaker notes go here.
 :::
 
 
+## {{< fa brands github >}} `real-time-ai-for-surgery` {.scrollable}
+### GitHub templates 
+::: {.panel-tabset}
+
+### 🎒 new users
+![](figures/gh_templates_new_users.svg){fig-align=center}
+
+### 🔩 new models
+![](figures/gh_templates_new_models.svg){fig-align=center}
+
+### :recycle: PRs
+![](figures/gh_templates_PRs.svg){fig-align=center}
+
+
+:::
+
+::: {.notes}
+Speaker notes go here.
+{.scrollable}
+:::
+
+
+
+
 
 ## {{< fa brands github >}} `real-time-ai-for-surgery` {.scrollable}
 ### Release version summaries
