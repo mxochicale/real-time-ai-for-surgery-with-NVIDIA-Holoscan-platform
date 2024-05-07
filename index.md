@@ -63,7 +63,7 @@ My background
 
 ## :medical_symbol: Endoscopic Pituitary Surgery
 
-<https://www.youtube.com/embed/EwlRdxokdGk>
+<https://www.youtube.com/embed/EwlRdxokdGk> {fig-align=center}
 
 <div class="notes">
 
@@ -107,7 +107,7 @@ surgery
 
 Holoscan-SDK
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/holoscan-platform/holohub.svg)
 
 [
 `holoscan-sdk`](https://github.com/nvidia-holoscan/holoscan-sdk/tree/main)
