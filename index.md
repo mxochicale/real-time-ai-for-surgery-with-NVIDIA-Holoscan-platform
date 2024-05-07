@@ -267,9 +267,9 @@ Speaker notes go here.
 
 </div>
 
-##  `real-time-ai-for-surgery`
+###  `real-time-ai-for-surgery`
 
-### Getting started docs
+#### Getting started docs
 
 <img src="figures/getting-started.svg" data-fig-align="center" />
 
@@ -279,7 +279,9 @@ Speaker notes go here.
 
 </div>
 
-## 🏥 Endoscopic pituitary surgery
+###  `real-time-ai-for-surgery`
+
+#### 🏥 Endoscopic pituitary surgery
 
 <div class="panel-tabset">
 
@@ -301,7 +303,9 @@ Speaker notes go here.
 
 </div>
 
-## 🏥 Endoscopic pituitary surgery
+###  `real-time-ai-for-surgery`
+
+#### 🏥 Endoscopic pituitary surgery
 
 <div class="panel-tabset">
 
@@ -318,7 +322,9 @@ Speaker notes go here.
 
 </div>
 
-## 🤝 Contributing
+###  `real-time-ai-for-surgery`
+
+#### 🤝 Contributing
 
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
