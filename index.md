@@ -88,12 +88,14 @@ Surgery (2024): 1-8.
 
 ## Real-time AI Applications for Surgery
 
-![](figures/rtai4spipeline.png)
+<img src="figures/rtai4spipeline.png" data-fig-align="center" />
 
 <div class="notes">
 
 Pipeline with development and deployment of real-time AI apps for
 surgery
+
+{fig-pos=‘b’} b(bottom) h(here) p(page) t(top)
 
 </div>
 
@@ -107,10 +109,10 @@ Holoscan-SDK
 
 ![](figures/00_template-vector-images/drawing-v00.svg)
 
-\[[
-`holoscan-sdk`](https://github.com/nvidia-holoscan/holoscan-sdk/tree/main)\]
+[
+`holoscan-sdk`](https://github.com/nvidia-holoscan/holoscan-sdk/tree/main)
 
-\[[ `holohub`](https://github.com/nvidia-holoscan/holohub)\]
+[ `holohub`](https://github.com/nvidia-holoscan/holohub)
 
 </div>
 
@@ -118,10 +120,10 @@ Holoscan-SDK
 
 Clara-AGX
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/holoscan-platform/clara_agx_dev_kit_components.svg)
 
-\[[
-`Clara-AGX DevKit`](https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md)\]
+[
+`Clara-AGX DevKit`](https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md)
 
 </div>
 

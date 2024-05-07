@@ -25,14 +25,14 @@
     "href": "index.html#real-time-ai-applications-for-surgery",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Real-time AI Applications for Surgery",
-    "text": "Real-time AI Applications for Surgery\n\n\nFigure 2: Pipeline with development and deployment of real-time AI apps for surgery\n\nPipeline with development and deployment of real-time AI apps for surgery"
+    "text": "Real-time AI Applications for Surgery\n\n\nFigure 2: Pipeline with development and deployment of real-time AI apps for surgery\n\nPipeline with development and deployment of real-time AI apps for surgery\n{fig-pos=‘b’} b(bottom) h(here) p(page) t(top)"
   },
   {
     "objectID": "index.html#holoscan-platform",
     "href": "index.html#holoscan-platform",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "Holoscan platform",
-    "text": "Holoscan platform\n\n\nHoloscan-SDK\n\n[ holoscan-sdk]\n[ holohub]\n\nClara-AGX\n\n[ Clara-AGX DevKit]\n\n\n\nHoloscan platform"
+    "text": "Holoscan platform\n\n\nHoloscan-SDK\n\n holoscan-sdk\n holohub\n\nClara-AGX\n\n Clara-AGX DevKit\n\n\n\nHoloscan platform"
   },
   {
     "objectID": "index.html#end-to-end-python-based-applications",
