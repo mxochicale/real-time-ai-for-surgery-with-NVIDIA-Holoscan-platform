@@ -413,108 +413,17 @@ multi_ai_inference_replayer:
 Speaker notes go here.
 
 <img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+data-fig-align="center" /> \`\`\`{.python
+filename=“unit-test-example.py” code-line-numbers=“\|30-36”}
 
-<div class="code-with-filename">
-
-**unit-test-example.py**
-
-``` python
-:::
-
+</div>
 
 ##  `real-time-ai-for-surgery`
+
 ### 🤝 Contributing
-::: {#fig-template}
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
-
-real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contributions, issues and feature requests are welcome. 
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
-
-
-## Template for figures 
-::: {#fig-template}
-
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
-
-This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
-
-
-
-
-
-
-
-<!--
-## Template for tabsets {.smaller}
-::: {.panel-tabset}
-
-### Tab A
-
-Content for `Tab A`
-
-### Tab B
-
-Content for `Tab B`
-
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
--->
-
-
-
-<!--
-## Template for tabsets with code-blocks {.smaller}{.scrollable}
-::: {.panel-tabset}
-
-### Code-block A
-
-```{.python}
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-</div>
-
-### Code-block B
-
-``` python
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-
-</div>
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
 
 <div class="notes">
 
@@ -522,130 +431,16 @@ Speaker notes go here.
 
 </div>
 
-–\>
+## Template for figures
 
-<!--
-## Multiple columns
-:::: {.columns}
-&#10;::: {.column width="50%"}
-Left column
-&#10;
-:::
-&#10;::: {.column width="50%"}
-Right column
-&#10;
-:::
-&#10;::::
-&#10;::: {.notes}
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
+
+<div class="notes">
+
 Speaker notes go here.
-:::
--->
-<!--
-## Multiple columns with code-blocks {.smaller}
-:::: {.columns}
-&#10;::: {.column width="50%"}
-```{.python}
-#Left column
-import numpy as np
-import matplotlib.pyplot as plt
-&#10;r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-:::
-&#10;::: {.column width="50%"}
-```{.python}
-#Right column
-import numpy as np
-import matplotlib.pyplot as plt
-&#10;r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-:::
-&#10;::::
-&#10;::: {.notes}
-Speaker notes go here.
-:::
--->
-<!--
-## :construction: Line Highlighting (10 lines)
-&#10;```{.python filename="matplotlib.py" code-line-numbers="|6-9"}
-import numpy as np
-import matplotlib.pyplot as plt
-&#10;r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-&#10;::: {.notes}
-Speaker notes go here.
-:::
--->
-<!--
-## :construction: Line Highlighting (N lines)
-```{.python filename="unit-test-example.py" code-line-numbers="|30-36"}
-import datetime
-import unittest
-&#10;import pandas as pd
-import pandas_datareader.data as web
-&#10;def get_stock_data(ticker):
-    """pull data from stooq"""
-    df = web.DataReader(ticker, 'yahoo')
-    return df
-&#10;class TestGetStockData(unittest.TestCase):
-    @classmethod
-    def setUpClass(self):
-        """We only want to pull this data once for each TestCase since it is an expensive operation"""
-        self.df = get_stock_data('^DJI')
-&#10;    def test_columns_present(self):
-        """ensures that the expected columns are all present"""
-        self.assertIn("Open", self.df.columns)
-        self.assertIn("High", self.df.columns)
-        self.assertIn("Low", self.df.columns)
-        self.assertIn("Close", self.df.columns)
-        self.assertIn("Volume", self.df.columns)
-&#10;    def test_non_empty(self):
-        """ensures that there is more than one row of data"""
-        self.assertNotEqual(len(self.df.index), 0)
-&#10;    def test_high_low(self):
-        """ensure high and low are the highest and lowest in the same row"""
-        ohlc = self.df[["Open","High","Low","Close"]]
-        highest = ohlc.max(axis=1)
-        lowest = ohlc.min(axis=1)
-        self.assertTrue(ohlc.le(highest, axis=0).all(axis=None))
-        self.assertTrue(ohlc.ge(lowest, axis=0).all(axis=None))
-&#10;    def test_most_recent_within_week(self):
-        """most recent data was collected within the last week"""
-        most_recent_date = pd.to_datetime(self.df.index[-1])
-        self.assertLessEqual((datetime.datetime.today() - most_recent_date).days, 7)
-&#10;unittest.main()
-```
-&#10;::: {.notes}
-Reference for the code!
-&#10;https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/
-:::
--->
-<!--
-## :video_camera: Embedding Yotube Video
-https://www.youtube.com/embed/hbf7Ai3jnxY
-&#10;::: {.notes}
-Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
-&#10;Further details to render videos
-https://quarto.org/docs/authoring/videos.html
-:::
--->
+
+</div>
 
 ## 
 
@@ -658,8 +453,3 @@ https://quarto.org/docs/authoring/videos.html
 - Zhehua Mao, Sophia Bano and Matt Clarkson
   - Wellcome / EPSRC Centre for Interventional and Surgical Sciences
     (WEISS)
-
-<!--
-adding HTML comment syntax to not render the following lines
-## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}
--->
