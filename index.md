@@ -138,6 +138,16 @@ Holoscan platform
 
 </div>
 
+## Holoscan Core Concepts
+
+<img src="figures/holoscan_core_concepts.svg" data-fig-align="center" />
+
+<div class="notes">
+
+https://docs.nvidia.com/holoscan/sdk-user-guide/holoscan_operators_extensions.html
+
+</div>
+
 ## Bring Your Own Model (BYOM)
 
 <div class="panel-tabset">
@@ -505,17 +515,6 @@ Speaker notes go here. {.scrollable}
   - Enterprise secondments funding (Results by the end of May 2024)
 - Contributions to NVIDIA-Holoscan applications
 - Real-time AI video-based eye movement assessment
-
-<div class="notes">
-
-Speaker notes go here.
-
-</div>
-
-## Template for figures
-
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
 
 <div class="notes">
 

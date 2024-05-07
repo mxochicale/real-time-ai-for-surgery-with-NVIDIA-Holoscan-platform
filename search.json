@@ -35,6 +35,13 @@
     "text": "NVIDIA Holoscan platform\n\n\nHoloscan-SDK\n\n holoscan-sdk\n holohub\n\nClara-AGX\n\n Clara-AGX DevKit\n Orin-IGX DevKit\n\n\n\nHoloscan platform"
   },
   {
+    "objectID": "index.html#holoscan-core-concepts",
+    "href": "index.html#holoscan-core-concepts",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "Holoscan Core Concepts",
+    "text": "Holoscan Core Concepts\n\n\nFigure 2: Operator: An operator is the most basic unit of work in this framework.\n\nhttps://docs.nvidia.com/holoscan/sdk-user-guide/holoscan_operators_extensions.html"
+  },
+  {
     "objectID": "index.html#bring-your-own-model-byom",
     "href": "index.html#bring-your-own-model-byom",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
@@ -46,7 +53,7 @@
     "href": "index.html#real-time-ai-for-surgery",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": " real-time-ai-for-surgery",
-    "text": "real-time-ai-for-surgery\nGetting started docs\n\n\nFigure 2: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSpeaker notes go here."
+    "text": "real-time-ai-for-surgery\nGetting started docs\n\n\nFigure 3: Getting started documentation provide with a range of links to setup, use, run and debug application including github workflow.\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#real-time-ai-for-surgery-1",
@@ -67,7 +74,7 @@
     "href": "index.html#real-time-ai-for-surgery-3",
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": " real-time-ai-for-surgery",
-    "text": "real-time-ai-for-surgery\n🤝 Contributing\n\n\nFigure 3: real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contributions, issues and feature requests are welcome.\n\nSpeaker notes go here."
+    "text": "real-time-ai-for-surgery\n🤝 Contributing\n\n\nFigure 4: real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contributions, issues and feature requests are welcome.\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#real-time-ai-for-surgery-4",
@@ -89,13 +96,6 @@
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": " real-time-ai-for-surgery",
     "text": "real-time-ai-for-surgery\nFuture work\n\nMulti-sensor data for real-time AI\n\nEnterprise secondments funding (Results by the end of May 2024)\n\nContributions to NVIDIA-Holoscan applications\nReal-time AI video-based eye movement assessment\n\n\nSpeaker notes go here."
-  },
-  {
-    "objectID": "index.html#template-for-figures",
-    "href": "index.html#template-for-figures",
-    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
-    "section": "Template for figures",
-    "text": "Template for figures\n\n\nFigure 4: This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.\n\nSpeaker notes go here."
   },
   {
     "objectID": "index.html#acknowledgements",
