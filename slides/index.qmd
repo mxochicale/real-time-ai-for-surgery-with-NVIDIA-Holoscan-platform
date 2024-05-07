@@ -322,6 +322,10 @@ This text is part of the caption of this figure. Note that default size of prese
 Speaker notes go here.
 :::
 
+
+
+
+
 ## 🏥 Endoscopic pituitary surgery
 ::: {.panel-tabset}
 
@@ -333,15 +337,11 @@ Speaker notes go here.
 
 ![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
-## 🔱 Multi AI models
+### 🔱 Multi AI models
 
 ![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
-
-
 :::
-
-
 
 
 
