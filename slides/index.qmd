@@ -329,11 +329,11 @@ Speaker notes go here.
 
 ### 👃 Multi-head Model
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+![](figures/eps-mhm.svg){fig-align=center}
 
 ### 🌓 PhaseNet Model
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+![](figures/eps-pnm.svg){fig-align=center}
 
 :::
 
@@ -344,18 +344,57 @@ Speaker notes go here.
 
 
 
-## {{< fa brands github >}} `real-time-ai-for-surgery`
+## {{< fa brands github >}} `real-time-ai-for-surgery` {.scrollable}
 ### 🏥 Endoscopic pituitary surgery
 ::: {.panel-tabset}
 
 ### 🔱 Multi AI models
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+```{.python filename="multi-ai.py"}
+        # Define the workflow
+        if is_v4l2:
+            self.add_flow(source, viz, {("signal", "receivers")})
+            self.add_flow(source, preprocessor_v4l2, {("signal", "source_video")})
+            self.add_flow(source, preprocessor_phasenet_v4l2, {("signal", "source_video")})
+            for op in [preprocessor_v4l2, preprocessor_phasenet_v4l2]:
+                self.add_flow(op, multi_ai_inference_v4l2, {("", "receivers")})
+            ### connect infereceOp to postprocessors
+            self.add_flow(
+                multi_ai_inference_v4l2, multiheadOp, {("transmitter", "in_tensor_postproOp")}
+            )
+            self.add_flow(multi_ai_inference_v4l2, segpostprocessor, {("transmitter", "")})
+            self.add_flow(multi_ai_inference_v4l2, phasenetOp, {("", "in")})
+
+        else:
+            self.add_flow(source, viz, {("", "receivers")})
+            self.add_flow(source, preprocessor_replayer, {("output", "source_video")})
+            self.add_flow(source, preprocessor_phasenet_replayer, {("output", "source_video")})
+            for op in [preprocessor_replayer, preprocessor_phasenet_replayer]:
+                self.add_flow(op, multi_ai_inference_replayer, {("", "receivers")})
+            ### connect infereceOp to postprocessors
+            self.add_flow(
+                multi_ai_inference_replayer, multiheadOp, {("transmitter", "in_tensor_postproOp")}
+            )
+            self.add_flow(multi_ai_inference_replayer, segpostprocessor, {("transmitter", "")})
+            self.add_flow(multi_ai_inference_replayer, phasenetOp, {("", "in")})
+
+        ## connect postprocessors outputs for visualisation with holoviz
+        self.add_flow(multiheadOp, viz, {("out_tensor_postproOp", "receivers")})
+        self.add_flow(segpostprocessor, viz, {("", "receivers")})
+        self.add_flow(phasenetOp, viz, {("out", "receivers")})
+        self.add_flow(phasenetOp, viz, {("output_specs", "input_specs")})
+```
+
+
+
 
 :::
 
 ::: {.notes}
 Speaker notes go here.
+
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+```{.python filename="unit-test-example.py" code-line-numbers="|30-36"}
 :::
 
 
@@ -415,7 +454,7 @@ Speaker notes go here.
 
 
 
-## Template for tabsets with code-blocks {.smaller}
+## Template for tabsets with code-blocks {.smaller}{.scrollable}
 ::: {.panel-tabset}
 
 ### Code-block A
