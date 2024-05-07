@@ -351,7 +351,6 @@ Speaker notes go here.
 ### 🔱 Multi AI models (python)
 
 ```{.python filename="multi-ai.py"}
-...
         # Define the workflow
         if is_v4l2:
             self.add_flow(source, viz, {("signal", "receivers")})
@@ -384,13 +383,14 @@ Speaker notes go here.
         self.add_flow(segpostprocessor, viz, {("", "receivers")})
         self.add_flow(phasenetOp, viz, {("out", "receivers")})
         self.add_flow(phasenetOp, viz, {("output_specs", "input_specs")})
-...
 ```
 
 
 ### 🔱 Multi AI models (YAML)
 ```{.python filename="multi-ai.yaml"}
+
 ...
+
  multi_ai_inference_v4l2:
   #
   #
@@ -432,7 +432,8 @@ multi_ai_inference_replayer:
   output_on_cuda: true # optional param, default to true
   transmit_on_cuda: true # optional param, default to true
   is_engine_path: false # optional param, default to false
-...
+
+
 ```
 
 :::
@@ -443,20 +444,6 @@ Speaker notes go here.
 ![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 ```{.python filename="unit-test-example.py" code-line-numbers="|30-36"}
 :::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## {{< fa brands github >}} `real-time-ai-for-surgery`
@@ -471,47 +458,6 @@ real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contr
 ::: {.notes}
 Speaker notes go here.
 :::
-
-
-
-## {background-image="figures/oss4st-hsmr24.svg"}
-
-
-## 🙌 Acknowledgements
-
-* Mikael Brudfors and Nadim Daher
-  * NVIDIA Healthcare AI
-
-* Stephen Thompson
-  * Advanced Research Computing Centre (ARC)
-
-* Zhehua Mao, Sophia Bano and Matt Clarkson
-  * Wellcome / EPSRC Centre for Interventional and Surgical Sciences (WEISS)
-
-
-
-
-
-
-
-## :video_camera: Embedding Yotube Video
-{{< video https://www.youtube.com/embed/hbf7Ai3jnxY
-    start="1269"
-    width="85%" 
-    height="85%"
->}}
-
-::: {.notes}
-Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
-
-Further details to render videos
-https://quarto.org/docs/authoring/videos.html
-:::
-
-
-
-
-
 
 
 
@@ -756,6 +702,37 @@ https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-pyth
 
 
 
+
+
+
+
+## :video_camera: Embedding Yotube Video
+{{< video https://www.youtube.com/embed/hbf7Ai3jnxY
+    start="1269"
+    width="85%" 
+    height="85%"
+>}}
+
+::: {.notes}
+Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
+
+Further details to render videos
+https://quarto.org/docs/authoring/videos.html
+:::
+
+
+## {background-image="figures/oss4st-hsmr24.svg"}
+
+## 🙌 Acknowledgements
+
+* Mikael Brudfors and Nadim Daher
+  * NVIDIA Healthcare AI
+
+* Steve Thompson
+  * Advanced Research Computing Centre (ARC)
+
+* Zhehua Mao, Sophia Bano and Matt Clarkson
+  * Wellcome / EPSRC Centre for Interventional and Surgical Sciences (WEISS)
 
 
 
