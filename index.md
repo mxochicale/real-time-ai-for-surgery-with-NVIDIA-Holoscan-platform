@@ -144,7 +144,7 @@ Holoscan platform
 
 ### Operators and workflow
 
-![](figures/byom.svg)
+<img src="figures/byom.svg" data-fig-align="center" />
 
 ### Python
 
@@ -269,7 +269,8 @@ Speaker notes go here.
 
 ## Getting started tutorial
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
 
 <div class="notes">
 
@@ -283,15 +284,18 @@ Speaker notes go here.
 
 ### 👃 Multi-head Model
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
 
 ### 🌓 PhaseNet Model
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
 
 ## 🔱 Multi AI models
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
 
 </div>
 
