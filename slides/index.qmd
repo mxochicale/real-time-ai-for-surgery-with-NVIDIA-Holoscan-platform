@@ -499,7 +499,9 @@ Speaker notes go here.
 
 
 
-## {background-image="figures/oss4st-hsmr24.svg"}
+## {background-image="figures/oss4st-hsmr24-p00.svg"}
+
+## {background-image="figures/oss4st-hsmr24-p01.svg"}
 
 ## 🙌 Acknowledgements
 
