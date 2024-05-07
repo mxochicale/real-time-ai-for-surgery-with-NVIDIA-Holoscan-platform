@@ -457,7 +457,7 @@ Speaker notes go here.
 ### 🤝 Contributing
 ::: {#fig-template}
 
-![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+![](figures/contributing.svg){fig-align=center}
 
 real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contributions, issues and feature requests are welcome. 
 :::
