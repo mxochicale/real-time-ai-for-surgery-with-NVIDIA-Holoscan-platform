@@ -480,6 +480,7 @@ Speaker notes go here.
 
 
 
+<!--
 ## Template for tabsets {.smaller}
 ::: {.panel-tabset}
 
@@ -497,9 +498,11 @@ Content for `Tab B`
 Speaker notes go here.
 :::
 
+-->
 
 
 
+<!--
 ## Template for tabsets with code-blocks {.smaller}{.scrollable}
 ::: {.panel-tabset}
 
@@ -538,13 +541,14 @@ plt.show()
 ::: {.notes}
 Speaker notes go here.
 :::
+-->
 
 
 
 
 
 
-
+<!--
 ## Multiple columns
 :::: {.columns}
 
@@ -565,12 +569,13 @@ Right column
 ::: {.notes}
 Speaker notes go here.
 :::
+-->
 
 
 
 
 
-
+<!--
 ## Multiple columns with code-blocks {.smaller}
 :::: {.columns}
 
@@ -611,13 +616,14 @@ plt.show()
 ::: {.notes}
 Speaker notes go here.
 :::
+-->
 
 
 
 
 
 
-
+<!--
 ## :construction: Line Highlighting (10 lines)
 
 ```{.python filename="matplotlib.py" code-line-numbers="|6-9"}
@@ -636,6 +642,7 @@ plt.show()
 ::: {.notes}
 Speaker notes go here.
 :::
+-->
 
 
 
@@ -646,7 +653,7 @@ Speaker notes go here.
 
 
 
-
+<!--
 ## :construction: Line Highlighting (N lines)
 ```{.python filename="unit-test-example.py" code-line-numbers="|30-36"}
 import datetime
@@ -699,13 +706,14 @@ Reference for the code!
 
 https://machinelearningmastery.com/a-gentle-introduction-to-unit-testing-in-python/
 :::
+-->
 
 
 
 
 
 
-
+<!--
 ## :video_camera: Embedding Yotube Video
 {{< video https://www.youtube.com/embed/hbf7Ai3jnxY
     start="1269"
@@ -719,7 +727,7 @@ Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
 Further details to render videos
 https://quarto.org/docs/authoring/videos.html
 :::
-
+-->
 
 ## {background-image="figures/oss4st-hsmr24.svg"}
 
