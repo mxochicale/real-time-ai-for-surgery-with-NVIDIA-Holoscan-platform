@@ -287,13 +287,11 @@ Speaker notes go here.
 
 ### 👃 Multi-head Model
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+<img src="figures/eps-mhm.svg" data-fig-align="center" />
 
 ### 🌓 PhaseNet Model
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+<img src="figures/eps-pnm.svg" data-fig-align="center" />
 
 </div>
 
@@ -311,8 +309,46 @@ Speaker notes go here.
 
 ### 🔱 Multi AI models
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+<div class="code-with-filename">
+
+**multi-ai.py**
+
+``` python
+        # Define the workflow
+        if is_v4l2:
+            self.add_flow(source, viz, {("signal", "receivers")})
+            self.add_flow(source, preprocessor_v4l2, {("signal", "source_video")})
+            self.add_flow(source, preprocessor_phasenet_v4l2, {("signal", "source_video")})
+            for op in [preprocessor_v4l2, preprocessor_phasenet_v4l2]:
+                self.add_flow(op, multi_ai_inference_v4l2, {("", "receivers")})
+            ### connect infereceOp to postprocessors
+            self.add_flow(
+                multi_ai_inference_v4l2, multiheadOp, {("transmitter", "in_tensor_postproOp")}
+            )
+            self.add_flow(multi_ai_inference_v4l2, segpostprocessor, {("transmitter", "")})
+            self.add_flow(multi_ai_inference_v4l2, phasenetOp, {("", "in")})
+
+        else:
+            self.add_flow(source, viz, {("", "receivers")})
+            self.add_flow(source, preprocessor_replayer, {("output", "source_video")})
+            self.add_flow(source, preprocessor_phasenet_replayer, {("output", "source_video")})
+            for op in [preprocessor_replayer, preprocessor_phasenet_replayer]:
+                self.add_flow(op, multi_ai_inference_replayer, {("", "receivers")})
+            ### connect infereceOp to postprocessors
+            self.add_flow(
+                multi_ai_inference_replayer, multiheadOp, {("transmitter", "in_tensor_postproOp")}
+            )
+            self.add_flow(multi_ai_inference_replayer, segpostprocessor, {("transmitter", "")})
+            self.add_flow(multi_ai_inference_replayer, phasenetOp, {("", "in")})
+
+        ## connect postprocessors outputs for visualisation with holoviz
+        self.add_flow(multiheadOp, viz, {("out_tensor_postproOp", "receivers")})
+        self.add_flow(segpostprocessor, viz, {("", "receivers")})
+        self.add_flow(phasenetOp, viz, {("out", "receivers")})
+        self.add_flow(phasenetOp, viz, {("output_specs", "input_specs")})
+```
+
+</div>
 
 </div>
 
@@ -320,35 +356,55 @@ data-fig-align="center" />
 
 Speaker notes go here.
 
-</div>
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
+
+<div class="code-with-filename">
+
+**unit-test-example.py**
+
+``` python
+:::
+
 
 ##  `real-time-ai-for-surgery`
-
 ### 🤝 Contributing
+::: {#fig-template}
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
 
-<div class="notes">
+real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contributions, issues and feature requests are welcome. 
+:::
 
+::: {.notes}
 Speaker notes go here.
+:::
 
-</div>
 
-## Template for figures
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
 
-<div class="notes">
 
+## Template for figures 
+::: {#fig-template}
+
+![](figures/00_template-vector-images/drawing-v00.svg){fig-align=center}
+
+This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
+:::
+
+::: {.notes}
 Speaker notes go here.
+:::
 
-</div>
 
-## Template for tabsets
 
-<div class="panel-tabset">
+
+
+
+
+
+## Template for tabsets {.smaller}
+::: {.panel-tabset}
 
 ### Tab A
 
@@ -358,21 +414,21 @@ Content for `Tab A`
 
 Content for `Tab B`
 
-</div>
+:::
 
-<div class="notes">
-
+::: {.notes}
 Speaker notes go here.
+:::
 
-</div>
 
-## Template for tabsets with code-blocks
 
-<div class="panel-tabset">
+
+## Template for tabsets with code-blocks {.smaller}{.scrollable}
+::: {.panel-tabset}
 
 ### Code-block A
 
-``` python
+```{.python}
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -384,6 +440,8 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
+
+</div>
 
 ### Code-block B
 

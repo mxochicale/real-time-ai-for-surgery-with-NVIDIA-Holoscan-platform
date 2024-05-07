@@ -712,14 +712,14 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
 <div id="tabset-2-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="figures/eps-mhm.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="figures/eps-pnm.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
@@ -739,132 +739,162 @@ Figure&nbsp;2: Getting started documentation provide with a range of links to se
           display:block!important;
       }</style></aside>
 </section>
-<section id="real-time-ai-for-surgery-2" class="slide level2">
+<section id="real-time-ai-for-surgery-2" class="slide level2 scrollable">
 <h2><i class="fa-brands fa-github"></i> <code>real-time-ai-for-surgery</code></h2>
 <h3 id="endoscopic-pituitary-surgery-2">🏥 Endoscopic pituitary surgery</h3>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">🔱 Multi AI models</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>multi-ai.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="multi-ai.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>        <span class="co"># Define the workflow</span></span>
+<span id="cb3-2"><a></a>        <span class="cf">if</span> is_v4l2:</span>
+<span id="cb3-3"><a></a>            <span class="va">self</span>.add_flow(source, viz, {(<span class="st">"signal"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-4"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_v4l2, {(<span class="st">"signal"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-5"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_phasenet_v4l2, {(<span class="st">"signal"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-6"><a></a>            <span class="cf">for</span> op <span class="kw">in</span> [preprocessor_v4l2, preprocessor_phasenet_v4l2]:</span>
+<span id="cb3-7"><a></a>                <span class="va">self</span>.add_flow(op, multi_ai_inference_v4l2, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-8"><a></a>            <span class="co">### connect infereceOp to postprocessors</span></span>
+<span id="cb3-9"><a></a>            <span class="va">self</span>.add_flow(</span>
+<span id="cb3-10"><a></a>                multi_ai_inference_v4l2, multiheadOp, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor_postproOp"</span>)}</span>
+<span id="cb3-11"><a></a>            )</span>
+<span id="cb3-12"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_v4l2, segpostprocessor, {(<span class="st">"transmitter"</span>, <span class="st">""</span>)})</span>
+<span id="cb3-13"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_v4l2, phasenetOp, {(<span class="st">""</span>, <span class="st">"in"</span>)})</span>
+<span id="cb3-14"><a></a></span>
+<span id="cb3-15"><a></a>        <span class="cf">else</span>:</span>
+<span id="cb3-16"><a></a>            <span class="va">self</span>.add_flow(source, viz, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-17"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_replayer, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-18"><a></a>            <span class="va">self</span>.add_flow(source, preprocessor_phasenet_replayer, {(<span class="st">"output"</span>, <span class="st">"source_video"</span>)})</span>
+<span id="cb3-19"><a></a>            <span class="cf">for</span> op <span class="kw">in</span> [preprocessor_replayer, preprocessor_phasenet_replayer]:</span>
+<span id="cb3-20"><a></a>                <span class="va">self</span>.add_flow(op, multi_ai_inference_replayer, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-21"><a></a>            <span class="co">### connect infereceOp to postprocessors</span></span>
+<span id="cb3-22"><a></a>            <span class="va">self</span>.add_flow(</span>
+<span id="cb3-23"><a></a>                multi_ai_inference_replayer, multiheadOp, {(<span class="st">"transmitter"</span>, <span class="st">"in_tensor_postproOp"</span>)}</span>
+<span id="cb3-24"><a></a>            )</span>
+<span id="cb3-25"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_replayer, segpostprocessor, {(<span class="st">"transmitter"</span>, <span class="st">""</span>)})</span>
+<span id="cb3-26"><a></a>            <span class="va">self</span>.add_flow(multi_ai_inference_replayer, phasenetOp, {(<span class="st">""</span>, <span class="st">"in"</span>)})</span>
+<span id="cb3-27"><a></a></span>
+<span id="cb3-28"><a></a>        <span class="co">## connect postprocessors outputs for visualisation with holoviz</span></span>
+<span id="cb3-29"><a></a>        <span class="va">self</span>.add_flow(multiheadOp, viz, {(<span class="st">"out_tensor_postproOp"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-30"><a></a>        <span class="va">self</span>.add_flow(segpostprocessor, viz, {(<span class="st">""</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-31"><a></a>        <span class="va">self</span>.add_flow(phasenetOp, viz, {(<span class="st">"out"</span>, <span class="st">"receivers"</span>)})</span>
+<span id="cb3-32"><a></a>        <span class="va">self</span>.add_flow(phasenetOp, viz, {(<span class="st">"output_specs"</span>, <span class="st">"input_specs"</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Speaker notes go here.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>unit-test-example.py</strong></pre>
 </div>
-</div>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="real-time-ai-for-surgery-3" class="slide level2">
-<h2><i class="fa-brands fa-github"></i> <code>real-time-ai-for-surgery</code></h2>
-<h3 id="contributing">🤝 Contributing</h3>
-
-<img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">
-Figure&nbsp;3: real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contributions, issues and feature requests are welcome.
-</p><aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="template-for-figures" class="slide level2">
-<h2>Template for figures</h2>
-
-<img data-src="figures/00_template-vector-images/drawing-v00.svg" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">
-Figure&nbsp;4: This text is part of the caption of this figure. Note that default size of presentation slides is 1200 x 700.
-</p><aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="template-for-tabsets" class="slide level2 smaller">
-<h2>Template for tabsets</h2>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Tab A</a></li><li><a href="#tabset-4-2">Tab B</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-<p>Content for <code>Tab A</code></p>
-</div>
-<div id="tabset-4-2">
-<p>Content for <code>Tab B</code></p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="template-for-tabsets-with-code-blocks" class="slide level2 smaller">
-<h2>Template for tabsets with code-blocks</h2>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Code-block A</a></li><li><a href="#tabset-5-2">Code-block B</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb3-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb3-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb3-7"><a></a>ax.plot(theta, r)</span>
-<span id="cb3-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb3-9"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb3-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-5-2">
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<div class="sourceCode" id="cb4" data-filename="unit-test-example.py" data-code-line-numbers="|30-36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>:::</span>
+<span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb4-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb4-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb4-7"><a></a>ax.plot(theta, r)</span>
-<span id="cb4-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb4-9"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb4-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a></a><span class="co">##  `real-time-ai-for-surgery`</span></span>
+<span id="cb4-5"><a></a><span class="co">### 🤝 Contributing</span></span>
+<span id="cb4-6"><a></a>::: {<span class="co">#fig-template}</span></span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a><span class="op">!</span>[](figures<span class="op">/</span><span class="dv">00</span><span class="er">_template</span><span class="op">-</span>vector<span class="op">-</span>images<span class="op">/</span>drawing<span class="op">-</span>v00.svg){fig<span class="op">-</span>align<span class="op">=</span>center}</span>
+<span id="cb4-9"><a></a></span>
+<span id="cb4-10"><a></a>real<span class="op">-</span>time<span class="op">-</span>ai<span class="op">-</span><span class="cf">for</span><span class="op">-</span>surgery follows the Contributor Covenant Code of Conduct. Contributions, issues <span class="kw">and</span> feature requests are welcome. </span>
+<span id="cb4-11"><a></a>:::</span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a>::: {.notes}</span>
+<span id="cb4-14"><a></a>Speaker notes go here.</span>
+<span id="cb4-15"><a></a>:::</span>
+<span id="cb4-16"><a></a></span>
+<span id="cb4-17"><a></a></span>
+<span id="cb4-18"><a></a></span>
+<span id="cb4-19"><a></a></span>
+<span id="cb4-20"><a></a></span>
+<span id="cb4-21"><a></a><span class="co">## Template for figures </span></span>
+<span id="cb4-22"><a></a>::: {<span class="co">#fig-template}</span></span>
+<span id="cb4-23"><a></a></span>
+<span id="cb4-24"><a></a><span class="op">!</span>[](figures<span class="op">/</span><span class="dv">00</span><span class="er">_template</span><span class="op">-</span>vector<span class="op">-</span>images<span class="op">/</span>drawing<span class="op">-</span>v00.svg){fig<span class="op">-</span>align<span class="op">=</span>center}</span>
+<span id="cb4-25"><a></a></span>
+<span id="cb4-26"><a></a>This text <span class="kw">is</span> part of the caption of this figure. Note that default size of presentation slides <span class="kw">is</span> <span class="dv">1200</span> x <span class="fl">700.</span></span>
+<span id="cb4-27"><a></a>:::</span>
+<span id="cb4-28"><a></a></span>
+<span id="cb4-29"><a></a>::: {.notes}</span>
+<span id="cb4-30"><a></a>Speaker notes go here.</span>
+<span id="cb4-31"><a></a>:::</span>
+<span id="cb4-32"><a></a></span>
+<span id="cb4-33"><a></a></span>
+<span id="cb4-34"><a></a></span>
+<span id="cb4-35"><a></a></span>
+<span id="cb4-36"><a></a></span>
+<span id="cb4-37"><a></a></span>
+<span id="cb4-38"><a></a></span>
+<span id="cb4-39"><a></a></span>
+<span id="cb4-40"><a></a><span class="co">## Template for tabsets {.smaller}</span></span>
+<span id="cb4-41"><a></a>::: {.panel<span class="op">-</span>tabset}</span>
+<span id="cb4-42"><a></a></span>
+<span id="cb4-43"><a></a><span class="co">### Tab A</span></span>
+<span id="cb4-44"><a></a></span>
+<span id="cb4-45"><a></a>Content <span class="cf">for</span> `Tab A`</span>
+<span id="cb4-46"><a></a></span>
+<span id="cb4-47"><a></a><span class="co">### Tab B</span></span>
+<span id="cb4-48"><a></a></span>
+<span id="cb4-49"><a></a>Content <span class="cf">for</span> `Tab B`</span>
+<span id="cb4-50"><a></a></span>
+<span id="cb4-51"><a></a>:::</span>
+<span id="cb4-52"><a></a></span>
+<span id="cb4-53"><a></a>::: {.notes}</span>
+<span id="cb4-54"><a></a>Speaker notes go here.</span>
+<span id="cb4-55"><a></a>:::</span>
+<span id="cb4-56"><a></a></span>
+<span id="cb4-57"><a></a></span>
+<span id="cb4-58"><a></a></span>
+<span id="cb4-59"><a></a></span>
+<span id="cb4-60"><a></a><span class="co">## Template for tabsets with code-blocks {.smaller}{.scrollable}</span></span>
+<span id="cb4-61"><a></a>::: {.panel<span class="op">-</span>tabset}</span>
+<span id="cb4-62"><a></a></span>
+<span id="cb4-63"><a></a><span class="co">### Code-block A</span></span>
+<span id="cb4-64"><a></a></span>
+<span id="cb4-65"><a></a>```{.python}</span>
+<span id="cb4-66"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-67"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-68"><a></a></span>
+<span id="cb4-69"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb4-70"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb4-71"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb4-72"><a></a>ax.plot(theta, r)</span>
+<span id="cb4-73"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb4-74"><a></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb4-75"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+<h3 id="code-block-b">Code-block B</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb5-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb5-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb5-7"><a></a>ax.plot(theta, r)</span>
+<span id="cb5-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb5-9"><a></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <aside class="notes">
 <p>Speaker notes go here.</p>
 <style type="text/css">
@@ -906,19 +936,7 @@ Figure&nbsp;4: This text is part of the caption of this figure. Note that defaul
 <h2>Multiple columns with code-blocks</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co">#Left column</span></span>
-<span id="cb5-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb5-6"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb5-7"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb5-8"><a></a>ax.plot(theta, r)</span>
-<span id="cb5-9"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb5-10"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb5-11"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co">#Right column</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co">#Left column</span></span>
 <span id="cb6-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-4"><a></a></span>
@@ -929,6 +947,18 @@ Figure&nbsp;4: This text is part of the caption of this figure. Note that defaul
 <span id="cb6-9"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
 <span id="cb6-10"><a></a>ax.grid(<span class="va">True</span>)</span>
 <span id="cb6-11"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co">#Right column</span></span>
+<span id="cb7-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb7-6"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb7-7"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb7-8"><a></a>ax.plot(theta, r)</span>
+<span id="cb7-9"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb7-10"><a></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb7-11"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -951,16 +981,16 @@ Figure&nbsp;4: This text is part of the caption of this figure. Note that defaul
 <div class="code-with-filename-file">
 <pre><strong>matplotlib.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb7" data-filename="matplotlib.py" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-3"><a></a></span>
-<span id="cb7-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb7-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb7-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb7-7"><a></a>ax.plot(theta, r)</span>
-<span id="cb7-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb7-9"><a></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb7-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-filename="matplotlib.py" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb8-5"><a></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb8-6"><a></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb8-7"><a></a>ax.plot(theta, r)</span>
+<span id="cb8-8"><a></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb8-9"><a></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb8-10"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>Speaker notes go here.</p>
@@ -982,49 +1012,49 @@ Figure&nbsp;4: This text is part of the caption of this figure. Note that defaul
 <div class="code-with-filename-file">
 <pre><strong>unit-test-example.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="unit-test-example.py" data-code-line-numbers="|30-36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> datetime</span>
-<span id="cb8-2"><a></a><span class="im">import</span> unittest</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-5"><a></a><span class="im">import</span> pandas_datareader.data <span class="im">as</span> web</span>
-<span id="cb8-6"><a></a></span>
-<span id="cb8-7"><a></a><span class="kw">def</span> get_stock_data(ticker):</span>
-<span id="cb8-8"><a></a>    <span class="co">"""pull data from stooq"""</span></span>
-<span id="cb8-9"><a></a>    df <span class="op">=</span> web.DataReader(ticker, <span class="st">'yahoo'</span>)</span>
-<span id="cb8-10"><a></a>    <span class="cf">return</span> df</span>
-<span id="cb8-11"><a></a></span>
-<span id="cb8-12"><a></a><span class="kw">class</span> TestGetStockData(unittest.TestCase):</span>
-<span id="cb8-13"><a></a>    <span class="at">@classmethod</span></span>
-<span id="cb8-14"><a></a>    <span class="kw">def</span> setUpClass(<span class="va">self</span>):</span>
-<span id="cb8-15"><a></a>        <span class="co">"""We only want to pull this data once for each TestCase since it is an expensive operation"""</span></span>
-<span id="cb8-16"><a></a>        <span class="va">self</span>.df <span class="op">=</span> get_stock_data(<span class="st">'^DJI'</span>)</span>
-<span id="cb8-17"><a></a></span>
-<span id="cb8-18"><a></a>    <span class="kw">def</span> test_columns_present(<span class="va">self</span>):</span>
-<span id="cb8-19"><a></a>        <span class="co">"""ensures that the expected columns are all present"""</span></span>
-<span id="cb8-20"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Open"</span>, <span class="va">self</span>.df.columns)</span>
-<span id="cb8-21"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"High"</span>, <span class="va">self</span>.df.columns)</span>
-<span id="cb8-22"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Low"</span>, <span class="va">self</span>.df.columns)</span>
-<span id="cb8-23"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Close"</span>, <span class="va">self</span>.df.columns)</span>
-<span id="cb8-24"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Volume"</span>, <span class="va">self</span>.df.columns)</span>
-<span id="cb8-25"><a></a></span>
-<span id="cb8-26"><a></a>    <span class="kw">def</span> test_non_empty(<span class="va">self</span>):</span>
-<span id="cb8-27"><a></a>        <span class="co">"""ensures that there is more than one row of data"""</span></span>
-<span id="cb8-28"><a></a>        <span class="va">self</span>.assertNotEqual(<span class="bu">len</span>(<span class="va">self</span>.df.index), <span class="dv">0</span>)</span>
-<span id="cb8-29"><a></a></span>
-<span id="cb8-30"><a></a>    <span class="kw">def</span> test_high_low(<span class="va">self</span>):</span>
-<span id="cb8-31"><a></a>        <span class="co">"""ensure high and low are the highest and lowest in the same row"""</span></span>
-<span id="cb8-32"><a></a>        ohlc <span class="op">=</span> <span class="va">self</span>.df[[<span class="st">"Open"</span>,<span class="st">"High"</span>,<span class="st">"Low"</span>,<span class="st">"Close"</span>]]</span>
-<span id="cb8-33"><a></a>        highest <span class="op">=</span> ohlc.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb8-34"><a></a>        lowest <span class="op">=</span> ohlc.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb8-35"><a></a>        <span class="va">self</span>.assertTrue(ohlc.le(highest, axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="va">None</span>))</span>
-<span id="cb8-36"><a></a>        <span class="va">self</span>.assertTrue(ohlc.ge(lowest, axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="va">None</span>))</span>
-<span id="cb8-37"><a></a></span>
-<span id="cb8-38"><a></a>    <span class="kw">def</span> test_most_recent_within_week(<span class="va">self</span>):</span>
-<span id="cb8-39"><a></a>        <span class="co">"""most recent data was collected within the last week"""</span></span>
-<span id="cb8-40"><a></a>        most_recent_date <span class="op">=</span> pd.to_datetime(<span class="va">self</span>.df.index[<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb8-41"><a></a>        <span class="va">self</span>.assertLessEqual((datetime.datetime.today() <span class="op">-</span> most_recent_date).days, <span class="dv">7</span>)</span>
-<span id="cb8-42"><a></a></span>
-<span id="cb8-43"><a></a>unittest.main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-filename="unit-test-example.py" data-code-line-numbers="|30-36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> datetime</span>
+<span id="cb9-2"><a></a><span class="im">import</span> unittest</span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-5"><a></a><span class="im">import</span> pandas_datareader.data <span class="im">as</span> web</span>
+<span id="cb9-6"><a></a></span>
+<span id="cb9-7"><a></a><span class="kw">def</span> get_stock_data(ticker):</span>
+<span id="cb9-8"><a></a>    <span class="co">"""pull data from stooq"""</span></span>
+<span id="cb9-9"><a></a>    df <span class="op">=</span> web.DataReader(ticker, <span class="st">'yahoo'</span>)</span>
+<span id="cb9-10"><a></a>    <span class="cf">return</span> df</span>
+<span id="cb9-11"><a></a></span>
+<span id="cb9-12"><a></a><span class="kw">class</span> TestGetStockData(unittest.TestCase):</span>
+<span id="cb9-13"><a></a>    <span class="at">@classmethod</span></span>
+<span id="cb9-14"><a></a>    <span class="kw">def</span> setUpClass(<span class="va">self</span>):</span>
+<span id="cb9-15"><a></a>        <span class="co">"""We only want to pull this data once for each TestCase since it is an expensive operation"""</span></span>
+<span id="cb9-16"><a></a>        <span class="va">self</span>.df <span class="op">=</span> get_stock_data(<span class="st">'^DJI'</span>)</span>
+<span id="cb9-17"><a></a></span>
+<span id="cb9-18"><a></a>    <span class="kw">def</span> test_columns_present(<span class="va">self</span>):</span>
+<span id="cb9-19"><a></a>        <span class="co">"""ensures that the expected columns are all present"""</span></span>
+<span id="cb9-20"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Open"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb9-21"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"High"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb9-22"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Low"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb9-23"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Close"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb9-24"><a></a>        <span class="va">self</span>.assertIn(<span class="st">"Volume"</span>, <span class="va">self</span>.df.columns)</span>
+<span id="cb9-25"><a></a></span>
+<span id="cb9-26"><a></a>    <span class="kw">def</span> test_non_empty(<span class="va">self</span>):</span>
+<span id="cb9-27"><a></a>        <span class="co">"""ensures that there is more than one row of data"""</span></span>
+<span id="cb9-28"><a></a>        <span class="va">self</span>.assertNotEqual(<span class="bu">len</span>(<span class="va">self</span>.df.index), <span class="dv">0</span>)</span>
+<span id="cb9-29"><a></a></span>
+<span id="cb9-30"><a></a>    <span class="kw">def</span> test_high_low(<span class="va">self</span>):</span>
+<span id="cb9-31"><a></a>        <span class="co">"""ensure high and low are the highest and lowest in the same row"""</span></span>
+<span id="cb9-32"><a></a>        ohlc <span class="op">=</span> <span class="va">self</span>.df[[<span class="st">"Open"</span>,<span class="st">"High"</span>,<span class="st">"Low"</span>,<span class="st">"Close"</span>]]</span>
+<span id="cb9-33"><a></a>        highest <span class="op">=</span> ohlc.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-34"><a></a>        lowest <span class="op">=</span> ohlc.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-35"><a></a>        <span class="va">self</span>.assertTrue(ohlc.le(highest, axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="va">None</span>))</span>
+<span id="cb9-36"><a></a>        <span class="va">self</span>.assertTrue(ohlc.ge(lowest, axis<span class="op">=</span><span class="dv">0</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="va">None</span>))</span>
+<span id="cb9-37"><a></a></span>
+<span id="cb9-38"><a></a>    <span class="kw">def</span> test_most_recent_within_week(<span class="va">self</span>):</span>
+<span id="cb9-39"><a></a>        <span class="co">"""most recent data was collected within the last week"""</span></span>
+<span id="cb9-40"><a></a>        most_recent_date <span class="op">=</span> pd.to_datetime(<span class="va">self</span>.df.index[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb9-41"><a></a>        <span class="va">self</span>.assertLessEqual((datetime.datetime.today() <span class="op">-</span> most_recent_date).days, <span class="dv">7</span>)</span>
+<span id="cb9-42"><a></a></span>
+<span id="cb9-43"><a></a>unittest.main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>Reference for the code!</p>
