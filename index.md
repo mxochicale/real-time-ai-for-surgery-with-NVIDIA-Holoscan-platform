@@ -99,7 +99,7 @@ surgery
 
 </div>
 
-## Holoscan platform
+## NVIDIA Holoscan platform
 
 <div class="columns">
 
@@ -267,7 +267,9 @@ Speaker notes go here.
 
 </div>
 
-## Getting started docs
+##  `real-time-ai-for-surgery`
+
+### Getting started docs
 
 <img src="figures/getting-started.svg" data-fig-align="center" />
 
