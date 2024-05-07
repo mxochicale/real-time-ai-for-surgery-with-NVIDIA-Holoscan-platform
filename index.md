@@ -88,11 +88,12 @@ Surgery (2024): 1-8.
 
 ## Real-time AI Applications for Surgery
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+![](figures/rtai4spipeline.png)
 
 <div class="notes">
 
-Speaker notes go here.
+Pipeline with development and deployment of real-time AI apps for
+surgery
 
 </div>
 
@@ -104,11 +105,23 @@ Speaker notes go here.
 
 Holoscan-SDK
 
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+\[[
+`holoscan-sdk`](https://github.com/nvidia-holoscan/holoscan-sdk/tree/main)\]
+
+\[[ `holohub`](https://github.com/nvidia-holoscan/holohub)\]
+
 </div>
 
 <div class="column" width="50%">
 
 Clara-AGX
+
+![](figures/00_template-vector-images/drawing-v00.svg)
+
+\[[
+`Clara-AGX DevKit`](https://github.com/nvidia-holoscan/holoscan-docs/blob/main/devkits/clara-agx/clara_agx_user_guide.md)\]
 
 </div>
 
@@ -116,7 +129,7 @@ Clara-AGX
 
 <div class="notes">
 
-Speaker notes go here.
+Holoscan platform
 
 </div>
 
