@@ -292,7 +292,7 @@ data-fig-align="center" />
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
-## 🔱 Multi AI models
+### 🔱 Multi AI models
 
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
