@@ -474,7 +474,6 @@ Content for `Tab B`
 ::: {.notes}
 Speaker notes go here.
 :::
-
 -->
 
 
