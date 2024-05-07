@@ -110,7 +110,7 @@ Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, Joh
 
 ![](figures/rtai4spipeline.svg)
 
-Pipeline with development and deployment of real-time AI apps for surgery
+Development and deployment pipeline for real-time AI apps for surgery
 :::
 
 ::: {.notes}
@@ -178,37 +178,127 @@ Holoscan platform
 
 
 
-## End-to-end python-based applications {.smaller}
+## Bring Your Own Model (BYOM)
 ::: {.panel-tabset}
 
-### Code-block A
+
+
+### Operators and workflow
+
+![](figures/byom.svg)
+
+### Python
 
 ```{.python}
-import numpy as np
-import matplotlib.pyplot as plt
+import os
+from argparse import ArgumentParser
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+from holoscan.core import Application
+
+from holoscan.operators import (
+    FormatConverterOp,
+    HolovizOp,
+    InferenceOp,
+    SegmentationPostprocessorOp,
+    VideoStreamReplayerOp,
+)
+from holoscan.resources import UnboundedAllocator
+
+
+class BYOMApp(Application):
+    def __init__(self, data):
+        """Initialize the application
+
+Parameters
+----------
+data : Location to the data
+"""
+
+        super().__init__()
+
+        # set name
+        self.name = "BYOM App"
+
+        if data == "none":
+            data = os.environ.get("HOLOSCAN_INPUT_PATH", "../data")
+
+        self.sample_data_path = data
+
+        self.model_path = os.path.join(os.path.dirname(__file__), "../model")
+        self.model_path_map = {
+            "byom_model": os.path.join(self.model_path, "identity_model.onnx"),
+        }
+
+        self.video_dir = os.path.join(self.sample_data_path, "racerx")
+        if not os.path.exists(self.video_dir):
+            raise ValueError(f"Could not find video data:{self.video_dir=}")
+
+# Define the workflow
+        self.add_flow(source, viz, {("output", "receivers")})
+        self.add_flow(source, preprocessor, {("output", "source_video")})
+        self.add_flow(preprocessor, inference, {("tensor", "receivers")})
+        self.add_flow(inference, postprocessor, {("transmitter", "in_tensor")})
+        self.add_flow(postprocessor, viz, {("out_tensor", "receivers")})
+
+
+def main(config_file, data):
+    app = BYOMApp(data=data)
+    # if the --config command line argument was provided, it will override this config_file
+    app.config(config_file)
+    app.run()
+
+
+if __name__ == "__main__":
+    # Parse args
+    parser = ArgumentParser(description="BYOM demo application.")
+    parser.add_argument(
+        "-d",
+        "--data",
+        default="none",
+        help=("Set the data path"),
+    )
+
+    args = parser.parse_args()
+    config_file = os.path.join(os.path.dirname(__file__), "byom.yaml")
+    main(config_file=config_file, data=args.data)
+
 ```
 
-### Code-block B
+### YAML
 
 ```{.python}
-import numpy as np
-import matplotlib.pyplot as plt
+%YAML 1.2
+replayer:  # VideoStreamReplayer
+  basename: "racerx"
+  frame_rate: 0 # as specified in timestamps
+  repeat: true # default: false
+  realtime: true # default: true
+  count: 0 # default: 0 (no frame count restriction)
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+preprocessor:  # FormatConverter
+  out_tensor_name: source_video
+  out_dtype: "float32"
+  resize_width: 512
+  resize_height: 512
+
+inference:  # Inference
+  backend: "trt"
+  pre_processor_map:
+    "byom_model": ["source_video"]
+  inference_map:
+    "byom_model": ["output"]
+
+postprocessor:  # SegmentationPostprocessor
+  in_tensor_name: output
+  # network_output_type: None
+  data_format: nchw
+
+viz:  # Holoviz
+  width: 854
+  height: 480
+  color_lut: [
+    [0.65, 0.81, 0.89, 0.1],
+    ]
 ```
 
 :::
