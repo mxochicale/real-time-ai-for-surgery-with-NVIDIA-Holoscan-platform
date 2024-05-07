@@ -307,7 +307,7 @@ Speaker notes go here.
 
 <div class="panel-tabset">
 
-### 🔱 Multi AI models
+### 🔱 Multi AI models (python)
 
 <div class="code-with-filename">
 
@@ -350,6 +350,62 @@ Speaker notes go here.
 
 </div>
 
+### 🔱 Multi AI models (YAML)
+
+<div class="code-with-filename">
+
+**multi-ai.yaml**
+
+``` python
+
+...
+
+ multi_ai_inference_v4l2:
+  #
+  #
+  # Multi-AI Inference Operator InferenceOp()
+  #
+  #
+  backend: "trt"
+  pre_processor_map:
+    "pit_surg_model": ["prepro_v4l2"]
+    "phasenet_model": ["prepro_PNv4l2"]
+  inference_map:
+    "pit_surg_model": ["segmentation_masks", "landmarks"]
+    "phasenet_model": ["out"]
+  enable_fp16: False
+  parallel_inference: true # optional param, default to true
+  infer_on_cpu: false # optional param, default to false
+  input_on_cuda: true # optional param, default to true
+  output_on_cuda: true # optional param, default to true
+  transmit_on_cuda: true # optional param, default to true
+  is_engine_path: false # optional param, default to false
+
+multi_ai_inference_replayer:
+  #
+  #
+  # Multi-AI Inference Operator InferenceOp()
+  #
+  #
+  backend: "trt"
+  pre_processor_map:
+    "pit_surg_model": ["prepro_replayer"]
+    "phasenet_model": ["prepro_PNreplayer"]
+  inference_map:
+    "pit_surg_model": ["segmentation_masks", "landmarks"]
+    "phasenet_model": ["out"]
+  enable_fp16: False
+  parallel_inference: true # optional param, default to true
+  infer_on_cpu: false # optional param, default to false
+  input_on_cuda: true # optional param, default to true
+  output_on_cuda: true # optional param, default to true
+  transmit_on_cuda: true # optional param, default to true
+  is_engine_path: false # optional param, default to false
+
+```
+
+</div>
+
 </div>
 
 <div class="notes">
@@ -379,8 +435,6 @@ real-time-ai-for-surgery follows the Contributor Covenant Code of Conduct. Contr
 ::: {.notes}
 Speaker notes go here.
 :::
-
-
 
 
 
