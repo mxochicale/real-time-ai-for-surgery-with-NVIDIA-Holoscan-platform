@@ -267,10 +267,9 @@ Speaker notes go here.
 
 </div>
 
-## Getting started tutorial
+## Getting started docs
 
-<img src="figures/00_template-vector-images/drawing-v00.svg"
-data-fig-align="center" />
+<img src="figures/getting-started.svg" data-fig-align="center" />
 
 <div class="notes">
 
@@ -292,6 +291,18 @@ data-fig-align="center" />
 <img src="figures/00_template-vector-images/drawing-v00.svg"
 data-fig-align="center" />
 
+</div>
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
+## 🏥 Endoscopic pituitary surgery
+
+<div class="panel-tabset">
+
 ### 🔱 Multi AI models
 
 <img src="figures/00_template-vector-images/drawing-v00.svg"
@@ -305,9 +316,21 @@ Speaker notes go here.
 
 </div>
 
+## 🤝 Contributing
+
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
+
+<div class="notes">
+
+Speaker notes go here.
+
+</div>
+
 ## Template for figures
 
-![](figures/00_template-vector-images/drawing-v00.svg)
+<img src="figures/00_template-vector-images/drawing-v00.svg"
+data-fig-align="center" />
 
 <div class="notes">
 
