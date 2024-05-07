@@ -96,5 +96,12 @@
     "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
     "section": "📹 Embedding Yotube Video",
     "text": "📹 Embedding Yotube Video\n\n\nAvailable aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.\nFurther details to render videos https://quarto.org/docs/authoring/videos.html"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Real-time AI for surgery with NVIDIA-Holoscan platform",
+    "section": "🙌 Acknowledgements",
+    "text": "🙌 Acknowledgements\n\nMikael Brudfors and Nadim Daher\n\nNVIDIA Healthcare AI\n\nSteve Thompson\n\nAdvanced Research Computing Centre (ARC)\n\nZhehua Mao, Sophia Bano and Matt Clarkson\n\nWellcome / EPSRC Centre for Interventional and Surgical Sciences (WEISS)"
   }
 ]

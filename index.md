@@ -696,6 +696,16 @@ https://quarto.org/docs/authoring/videos.html
 
 ## 
 
+## 🙌 Acknowledgements
+
+- Mikael Brudfors and Nadim Daher
+  - NVIDIA Healthcare AI
+- Steve Thompson
+  - Advanced Research Computing Centre (ARC)
+- Zhehua Mao, Sophia Bano and Matt Clarkson
+  - Wellcome / EPSRC Centre for Interventional and Surgical Sciences
+    (WEISS)
+
 <!--
 adding HTML comment syntax to not render the following lines
 ## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}
