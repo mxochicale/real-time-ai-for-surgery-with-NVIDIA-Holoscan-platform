@@ -445,23 +445,23 @@ Speaker notes go here.
 
 ### v0.1.0
 
-<img src="figures/rtai4s-v0.1.0.svg" data-fig-align="center" />
+<img src="figures/v0.1.0-rtai4s.svg" data-fig-align="center" />
 
 ### v0.2.0
 
-<img src="figures/rtai4s-v0.2.0.svg" data-fig-align="center" />
+<img src="figures/v0.2.0-rtai4s.svg" data-fig-align="center" />
 
 ### v0.3.0
 
-<img src="figures/rtai4s-v0.3.0.svg" data-fig-align="center" />
+<img src="figures/v0.3.0-rtai4s.svg" data-fig-align="center" />
 
 ### v0.4.0
 
-<img src="figures/rtai4s-v0.4.0.svg" data-fig-align="center" />
+<img src="figures/v0.4.0-rtai4s.svg" data-fig-align="center" />
 
 ### v0.5.0
 
-<img src="figures/rtai4s-v0.5.0.svg" data-fig-align="center" />
+<img src="figures/v0.5.0-rtai4s.svg" data-fig-align="center" />
 
 </div>
 
