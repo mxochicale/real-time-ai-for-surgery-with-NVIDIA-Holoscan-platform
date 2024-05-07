@@ -53,11 +53,7 @@ Content
 
 ## My background
 
-:::
-
 ![](figures/mybackground.svg)
-
-:::
 
 <div class="notes">
 
