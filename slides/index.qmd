@@ -69,7 +69,7 @@ Content
 
 ## My background
 
-![](figures/mybackground.svg)
+![](figures/mybackground.svg){fig-align=center}
 
 ::: {.notes}
 My background
