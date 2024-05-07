@@ -431,9 +431,6 @@ data-fig-align="center" />
 
 
 
-##  `real-time-ai-for-surgery`
-### :movie_camera: Demo
-
 
 
 
@@ -460,20 +457,9 @@ Speaker notes go here.
 
 
 
-
-
-## :video_camera: Embedding Yotube Video
-https://www.youtube.com/embed/hbf7Ai3jnxY
-
-::: {.notes}
-Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
-
-Further details to render videos
-https://quarto.org/docs/authoring/videos.html
-:::
-
-
 ## {background-image="figures/oss4st-hsmr24.svg"}
+
+
 
 ## 🙌 Acknowledgements
 
@@ -493,6 +479,17 @@ https://quarto.org/docs/authoring/videos.html
 
 
 
+
+
+## :video_camera: Embedding Yotube Video
+https://www.youtube.com/embed/hbf7Ai3jnxY
+
+::: {.notes}
+Available aspect ratios include 1x1, 4x3, 16x9 (the default), and 21x9.
+
+Further details to render videos
+https://quarto.org/docs/authoring/videos.html
+:::
 
 
 
