@@ -467,7 +467,7 @@ Speaker notes go here.
 
 <div class="notes">
 
-Speaker notes go here.
+Speaker notes go here. {.scrollable}
 
 </div>
 
@@ -475,9 +475,9 @@ Speaker notes go here.
 
 ### Future work
 
-- Multi-sensor real-time AI
-  - Enterprise secondments funding (Results end of May2024)
-- Contributions to holoscan applications
+- Multi-sensor data for real-time AI
+  - Enterprise secondments funding (Results by the end of May 2024)
+- Contributions to NVIDIA-Holoscan applications
 - Real-time AI video-based eye movement assessment
 
 <div class="notes">
