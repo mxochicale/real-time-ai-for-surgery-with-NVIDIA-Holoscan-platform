@@ -90,7 +90,6 @@ My background
     width="85%" 
     height="85%"
 >}}
-{fig-align=center}
 
 ::: {.notes}
 94,961 views  20 Nov 2012
@@ -112,7 +111,7 @@ Mao, Zhehua, Adrito Das, Mobarakol Islam, Danyal Z. Khan, Simon C. Williams, Joh
 ## Real-time AI Applications for Surgery
 ::: {#fig-template}
 
-![](figures/rtai4spipeline.png){fig-align=center}
+![](figures/rtai4spipeline.svg)
 
 Pipeline with development and deployment of real-time AI apps for surgery
 :::
@@ -121,6 +120,7 @@ Pipeline with development and deployment of real-time AI apps for surgery
 Pipeline with development and deployment of real-time AI apps for surgery
 
 
+{fig-align=center}
 {fig-pos='b'}
 b(bottom)
 h(here)
