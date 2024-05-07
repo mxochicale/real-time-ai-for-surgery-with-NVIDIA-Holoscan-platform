@@ -582,6 +582,8 @@ https://quarto.org/docs/authoring/videos.html
 
 </div>
 
+## 
+
 <!--
 adding HTML comment syntax to not render the following lines
 ## Embedding a video.mp4 {background-video="video.mp4" background-video-loop="true" background-video-muted="true" background-opacity=0}
