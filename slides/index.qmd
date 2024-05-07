@@ -68,11 +68,8 @@ Content
 
 
 ## My background
-:::
 
 ![](figures/mybackground.svg)
-
-:::
 
 ::: {.notes}
 My background
